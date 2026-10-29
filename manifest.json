@@ -1,0 +1,19 @@
+{
+  "name": "点菜通 · Chinese Menu & Vocab Flashcards",
+  "short_name": "点菜通 Hanzi",
+  "description": "Chinese Menu & Vocabulary Flashcards for Heritage Learners — Paste Hanzi, auto-generate Pinyin, listen to Mandarin audio, and revise on your phone.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1120",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

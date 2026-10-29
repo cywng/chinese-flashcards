@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="点菜通 Hanzi" />
+  <meta name="description" content="Chinese Menu & Vocabulary Flashcards for Heritage Learners — Paste Hanzi, auto-generate Pinyin, listen to Mandarin audio, and revise on your phone." />
+
+  <title>点菜通 · Chinese Menu & Vocab Flashcards</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Optional CDN pinyin-pro for extended rare characters (app also has a full built-in offline dictionary) -->
+  <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.27.0/dist/index.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="brand-area">
+        <span class="brand-logo" aria-hidden="true">🍜</span>
+        <div class="brand-text">
+          <h1 class="brand-title">点菜通 <span class="brand-sub">Hanzi Flashcards</span></h1>
+          <button id="headerDeckBtn" class="active-deck-pill" title="Switch active deck">
+            <span id="headerDeckIcon">🔥</span>
+            <span id="headerDeckName">烹饪与口味</span>
+            <span class="pill-chevron">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="fontToggleBtn" class="icon-pill-btn" title="Toggle between Modern UI font and Restaurant Menu Serif font">
+          <span id="fontToggleLabel">字 Sans</span>
+        </button>
+        <button id="themeToggleBtn" class="icon-btn" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Viewport -->
+    <main class="app-main">
+      <!-- ==================== VIEW 1: STUDY FLASHCARDS ==================== -->
+      <section id="view-study" class="view-section active">
+        <!-- Study Mode & Filter Bar -->
+        <div class="study-toolbar">
+          <div class="segmented-control" role="tablist" aria-label="Study Mode">
+            <button id="modeHanziBtn" class="seg-btn active" data-mode="hanzi-first" title="Show Hanzi on front to practice reading">
+              📖 Read Hanzi
+            </button>
+            <button id="modeRecallBtn" class="seg-btn" data-mode="recall-first" title="Show English on front to practice recalling precise Chinese words">
+              🎯 Recall Word
+            </button>
+          </div>
+
+          <div class="study-Secondary-controls">
+            <select id="studyFilterSelect" class="compact-select" aria-label="Filter cards">
+              <option value="all">All Cards</option>
+              <option value="unmastered">To Learn</option>
+              <option value="learning">Tricky Only</option>
+            </select>
+            <button id="shuffleDeckBtn" class="mini-action-btn" title="Shuffle cards">
+              🔀 Shuffle
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-row">
+          <div class="progress-bar-track">
+            <div id="studyProgressBar" class="progress-bar-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-meta">
+            <span id="studyCounterText">1 / 24</span>
+            <span id="deckMasteryBadge" class="mastery-pill">0% Mastered</span>
+          </div>
+        </div>
+
+        <!-- Flashcard Stage -->
+        <div id="flashcardStage" class="flashcard-stage">
+          <div id="flashcard" class="flashcard" tabindex="0" role="button" aria-label="Flashcard - Tap or press Space to flip">
+            <!-- FRONT OF CARD -->
+            <div class="card-face card-front">
+              <div class="card-top-bar">
+                <span id="cardStatusBadge" class="status-badge status-new">New</span>
+                <span id="cardModeHint" class="card-mode-label">Tap card to flip</span>
+              </div>
+
+              <div class="card-center-content">
+                <!-- Shown in Read Hanzi Mode -->
+                <div id="frontHanziContainer" class="front-hanzi-wrap">
+                  <div id="frontHanziText" class="hanzi-display">红烧</div>
+                  <div id="frontPeekBox" class="front-peek-box hidden"></div>
+                </div>
+
+                <!-- Shown in Recall Word Mode -->
+                <div id="frontRecallContainer" class="front-recall-wrap hidden">
+                  <div class="recall-prompt-tag">How do you say & write:</div>
+                  <div id="frontMeaningText" class="recall-meaning-display">Braised in dark soy sauce</div>
+                  <div id="frontRecallHint" class="recall-hint-text"></div>
+                </div>
+              </div>
+
+              <!-- Heritage Learner Helper Bar on Front (does not flip card) -->
+              <div class="card-front-helpers">
+                <button id="frontAudioHintBtn" class="helper-chip-btn" type="button" title="Hear pronunciation before flipping (connect spoken knowledge to characters)">
+                  🔊 Audio Hint
+                </button>
+                <button id="frontCharPeekBtn" class="helper-chip-btn" type="button" title="Peek at individual character meanings">
+                  🧩 Char Clue
+                </button>
+              </div>
+            </div>
+
+            <!-- BACK OF CARD -->
+            <div class="card-face card-back">
+              <div class="card-top-bar">
+                <div class="back-audio-controls">
+                  <button id="backSpeakBtn" class="audio-play-btn" type="button" title="Play Mandarin pronunciation (Shortcut: A)">
+                    🔊 Listen
+                  </button>
+                  <button id="backSlowSpeakBtn" class="audio-slow-btn" type="button" title="Play slow pronunciation (0.65x)">
+                    🐢 Slow
+                  </button>
+                </div>
+                <button id="editCurrentCardBtn" class="icon-mini-btn" type="button" title="Edit this card">
+                  ✏️
+                </button>
+              </div>
+
+              <div class="card-back-scroll">
+                <div id="backHanziText" class="back-hanzi">红烧</div>
+                <div id="backPinyinText" class="back-pinyin">hóng shāo</div>
+                <div id="backMeaningText" class="back-meaning">Braised in dark soy sauce ("red-cooked")</div>
+
+                <!-- Character-by-character building blocks -->
+                <div id="backBreakdownSection" class="breakdown-box">
+                  <div class="breakdown-title">🧩 Character Building Blocks (Tap char to hear):</div>
+                  <div id="backBreakdownChips" class="breakdown-chips"></div>
+                </div>
+
+                <!-- Culinary / Heritage Note -->
+                <div id="backNotesBox" class="notes-box">
+                  <span class="notes-icon">💡</span>
+                  <span id="backNotesText"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Session Complete State (Hidden during normal study) -->
+        <div id="sessionCompleteBox" class="session-complete-card hidden">
+          <div class="complete-emoji">🎉</div>
+          <h2 class="complete-title">Round Complete!</h2>
+          <p id="completeSummaryText" class="complete-subtitle">You reviewed 24 words in this deck.</p>
+
+          <div class="complete-stats-grid">
+            <div class="stat-box stat-good">
+              <span id="statGotItCount" class="stat-num">18</span>
+              <span class="stat-label">✅ Got It</span>
+            </div>
+            <div class="stat-box stat-review">
+              <span id="statNeedReviewCount" class="stat-num">6</span>
+              <span class="stat-label">🤔 Need Review</span>
+            </div>
+          </div>
+
+          <div class="complete-actions">
+            <button id="reviewMissedBtn" class="primary-btn">
+              🔥 Review Missed Words (<span id="missedCountSpan">0</span>)
+            </button>
+            <button id="restartSessionBtn" class="secondary-btn">
+              🔄 Study Full Deck Again
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty Filter State -->
+        <div id="emptyStudyBox" class="session-complete-card hidden">
+          <div class="complete-emoji">✨</div>
+          <h2 class="complete-title">No Cards Match This Filter</h2>
+          <p class="complete-subtitle">You've mastered all cards in this filter, or this deck is empty.</p>
+          <div class="complete-actions">
+            <button id="showAllCardsFilterBtn" class="primary-btn">Show All Cards in Deck</button>
+            <button id="goToPasteFromEmptyBtn" class="secondary-btn">📋 Paste New Vocab</button>
+          </div>
+        </div>
+
+        <!-- Bottom Rating Controls -->
+        <div id="studyActionRow" class="study-actions">
+          <button id="prevCardBtn" class="nav-arrow-btn" title="Previous Card (Left Arrow)" aria-label="Previous Card">
+            ‹
+          </button>
+
+          <div class="rating-buttons">
+            <button id="rateAgainBtn" class="rate-btn rate-again" title="Still learning — repeat soon (Shortcut: 1)">
+              <span class="rate-emoji">❌</span>
+              <span class="rate-text">Again</span>
+            </button>
+            <button id="rateHardBtn" class="rate-btn rate-hard" title="Tricky — mark for review (Shortcut: 2)">
+              <span class="rate-emoji">🤔</span>
+              <span class="rate-text">Tricky</span>
+            </button>
+            <button id="rateGoodBtn" class="rate-btn rate-good" title="Got it — mark mastered (Shortcut: 3)">
+              <span class="rate-emoji">✅</span>
+              <span class="rate-text">Got It</span>
+            </button>
+          </div>
+
+          <button id="nextCardBtn" class="nav-arrow-btn" title="Skip to Next Card (Right Arrow)" aria-label="Next Card">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: PASTE / IMPORT VOCAB ==================== -->
+      <section id="view-paste" class="view-section">
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>📋 Paste Chinese Characters / Menu Items</h2>
+            <p class="panel-desc">
+              Paste any Chinese words, menu items, or vocab list below. Pinyin and character breakdowns are generated automatically!
+            </p>
+          </div>
+
+          <div class="form-row">
+            <label for="pasteTargetDeckSelect" class="form-label">Save into Deck:</label>
+            <div class="deck-target-row">
+              <select id="pasteTargetDeckSelect" class="form-select"></select>
+              <button id="quickNewDeckFromPasteBtn" class="secondary-sm-btn" type="button">+ New Deck</button>
+            </div>
+          </div>
+
+          <div class="paste-input-header">
+            <label for="vocabPasteTextarea" class="form-label">Paste Text (1 per line, comma/space separated, or Hanzi - English):</label>
+            <div class="paste-quick-btns">
+              <button id="loadSamplePasteBtn" class="text-link-btn" type="button">✨ Try Sample Menu Paste</button>
+              <button id="clearPasteBtn" class="text-link-btn danger-link" type="button">Clear</button>
+            </div>
+          </div>
+
+          <textarea
+            id="vocabPasteTextarea"
+            class="paste-textarea"
+            rows="6"
+            placeholder="Examples you can paste:&#10;口水鸡&#10;夫妻肺片 - Sliced beef & offal in chili oil&#10;樟茶鸭 | zhāng chá yā | Smoked camphor-tea duck&#10;桂花糕 酸梅汤 炸鲜奶"
+          ></textarea>
+
+          <div class="paste-actions-bar">
+            <button id="parsePreviewBtn" class="primary-btn full-width-btn" type="button">
+              ⚡ Generate Pinyin & Preview Cards
+            </button>
+          </div>
+        </div>
+
+        <!-- Preview Table Section -->
+        <div id="pastePreviewSection" class="panel-card hidden">
+          <div class="preview-header-row">
+            <h3>Preview & Edit (<span id="previewCountSpan">0</span> words)</h3>
+            <button id="commitImportBtn" class="primary-btn" type="button">
+              💾 Save to Deck & Study
+            </button>
+          </div>
+          <p class="panel-desc">You can tweak any Pinyin or English meaning below before saving:</p>
+
+          <div id="previewListContainer" class="preview-list"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 3: WORD LIST & SEARCH ==================== -->
+      <section id="view-list" class="view-section">
+        <div class="panel-card">
+          <div class="list-toolbar">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input
+                type="search"
+                id="wordSearchInput"
+                class="form-input search-input"
+                placeholder="Search Hanzi, Pinyin, or English (e.g. roast, 牛肉, spicy)..."
+              />
+            </div>
+
+            <div class="list-filter-row">
+              <select id="listDeckScopeSelect" class="compact-select">
+                <option value="current">Current Deck</option>
+                <option value="all">All Decks</option>
+              </select>
+              <select id="listStatusFilterSelect" class="compact-select">
+                <option value="all">All Status</option>
+                <option value="new">New</option>
+                <option value="learning">Tricky</option>
+                <option value="mastered">Mastered</option>
+              </select>
+              <button id="addSingleWordBtn" class="secondary-sm-btn" type="button">+ Add Word</button>
+            </div>
+          </div>
+
+          <div id="wordListCountBar" class="list-count-bar">Showing 0 words</div>
+          <div id="wordListContainer" class="word-list-container"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: DECKS & SETTINGS ==================== -->
+      <section id="view-decks" class="view-section">
+        <div class="panel-card">
+          <div class="section-title-row">
+            <div>
+              <h2>🗂️ Vocabulary Decks</h2>
+              <p class="panel-desc">Tap any deck to study it, or create your own custom list.</p>
+            </div>
+            <button id="createNewDeckBtn" class="primary-sm-btn" type="button">+ New Deck</button>
+          </div>
+
+          <div id="decksGridContainer" class="decks-grid"></div>
+        </div>
+
+        <!-- Audio & Study Preferences -->
+        <div class="panel-card">
+          <h2>🔊 Audio & Heritage Learner Settings</h2>
+          <p class="panel-desc">
+            Uses your phone's built-in Mandarin TTS voice. Tip: On iPhone, make sure the physical Silent/Mute switch is off to hear audio.
+          </p>
+
+          <div class="settings-list">
+            <div class="setting-item">
+              <div class="setting-info">
+                <div class="setting-title">Auto-Play Sound on Card Flip</div>
+                <div class="setting-sub">Automatically speak Mandarin when flipping to the back of a card (stays silent on the front so you practice reading first!)</div>
+              </div>
+              <input type="checkbox" id="autoPlayToggle" class="toggle-checkbox" checked />
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <div class="setting-title">Show Character Building Blocks</div>
+                <div class="setting-sub">Break compound menu items into individual character meanings on card back</div>
+              </div>
+              <input type="checkbox" id="showBreakdownToggle" class="toggle-checkbox" checked />
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <div class="setting-title">Speech Speed</div>
+                <div class="setting-sub">Adjust pronunciation pace</div>
+              </div>
+              <select id="speechRateSelect" class="compact-select">
+                <option value="0.72">🐢 0.7x Slow</option>
+                <option value="0.88" selected>👌 0.9x Clear</option>
+                <option value="1.0">⚡ 1.0x Normal</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <div class="setting-title">Mandarin Voice</div>
+                <div class="setting-sub">Select device Chinese voice</div>
+              </div>
+              <div class="voice-select-wrap">
+                <select id="voiceSelect" class="compact-select"></select>
+                <button id="testVoiceBtn" class="secondary-sm-btn" type="button">🔊 Test</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backup, Export & Reset -->
+        <div class="panel-card">
+          <h2>💾 Backup & Data Transfer</h2>
+          <p class="panel-desc">All words and progress are saved locally on your phone browser. Export or import anytime.</p>
+          <div class="backup-btn-grid">
+            <button id="exportJsonBtn" class="secondary-btn" type="button">📤 Export All (JSON)</button>
+            <button id="copyDeckTextBtn" class="secondary-btn" type="button">📋 Copy Deck as Text</button>
+            <label class="secondary-btn file-label-btn">
+              📥 Import JSON Backup
+              <input type="file" id="importJsonFileInput" accept=".json" hidden />
+            </label>
+            <button id="restoreStartersBtn" class="secondary-btn" type="button">🔄 Restore Starter Menu Decks</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Mobile Navigation Bar -->
+    <nav class="bottom-nav" role="navigation" aria-label="Main Navigation">
+      <button class="nav-tab active" data-target="view-study">
+        <span class="nav-icon">🎴</span>
+        <span class="nav-label">Study</span>
+      </button>
+      <button class="nav-tab" data-target="view-paste">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">Paste Vocab</span>
+      </button>
+      <button class="nav-tab" data-target="view-list">
+        <span class="nav-icon">📚</span>
+        <span class="nav-label">Word List</span>
+      </button>
+      <button class="nav-tab" data-target="view-decks">
+        <span class="nav-icon">🗂️</span>
+        <span class="nav-label">Decks</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ==================== MODAL: CREATE NEW DECK ==================== -->
+  <div id="newDeckModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New Vocab Deck</h3>
+        <button id="closeNewDeckModalBtn" class="icon-btn" type="button">✕</button>
+      </div>
+      <form id="newDeckForm">
+        <div class="form-group">
+          <label for="newDeckNameInput" class="form-label">Deck Name</label>
+          <input type="text" id="newDeckNameInput" class="form-input" placeholder="e.g. 火锅必点 (Hotpot Favorites)" required />
+        </div>
+        <div class="form-group">
+          <label for="newDeckIconInput" class="form-label">Icon Emoji</label>
+          <input type="text" id="newDeckIconInput" class="form-input" value="🥢" maxlength="4" />
+        </div>
+        <div class="form-group">
+          <label for="newDeckDescInput" class="form-label">Description (optional)</label>
+          <input type="text" id="newDeckDescInput" class="form-input" placeholder="Words from local restaurants or notes" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancelNewDeckBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Create Deck</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: EDIT / ADD SINGLE CARD ==================== -->
+  <div id="editCardModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="editCardModalTitle">Edit Flashcard</h3>
+        <button id="closeEditCardModalBtn" class="icon-btn" type="button">✕</button>
+      </div>
+      <form id="editCardForm">
+        <input type="hidden" id="editCardIdInput" />
+        <input type="hidden" id="editCardDeckIdInput" />
+
+        <div class="form-group">
+          <label for="editCardHanziInput" class="form-label">Chinese Characters (Hanzi)</label>
+          <div class="input-with-btn">
+            <input type="text" id="editCardHanziInput" class="form-input" placeholder="e.g. 蒜泥白肉" required />
+            <button type="button" id="autoFillCardPinyinBtn" class="secondary-sm-btn">Auto Pinyin</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="editCardPinyinInput" class="form-label">Pinyin</label>
+          <input type="text" id="editCardPinyinInput" class="form-input" placeholder="e.g. suàn ní bái ròu" />
+        </div>
+
+        <div class="form-group">
+          <label for="editCardMeaningInput" class="form-label">English Meaning / Menu Dish</label>
+          <input type="text" id="editCardMeaningInput" class="form-input" placeholder="e.g. Sliced pork belly with mashed garlic chili sauce" />
+        </div>
+
+        <div class="form-group">
+          <label for="editCardNotesInput" class="form-label">Notes / Character Clues</label>
+          <textarea id="editCardNotesInput" class="form-input" rows="2" placeholder="Optional literal breakdown or memory clue"></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelEditCardBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Card</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
