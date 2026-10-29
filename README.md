@@ -45,3 +45,4 @@ A zero-build, mobile-first Progressive Web App (PWA) hosted on GitHub Pages desi
 * **iPhone (Safari)**: Open your GitHub Pages URL → Tap the **Share** button (`⬆`) → Tap **Add to Home Screen**.
 * **Android (Chrome)**: Open your GitHub Pages URL → Tap the three-dot menu → Tap **Add to Home screen / Install app**.
 * *Audio Tip for iPhone*: Make sure the physical Silent/Mute switch on the side of your iPhone is turned off (or use headphones) so Safari plays Web Speech API audio.
+

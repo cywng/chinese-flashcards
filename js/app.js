@@ -1113,3 +1113,4 @@ function escapeHtml(str) {
 function escapeAttr(str) {
   return escapeHtml(str).replace(/'/g, '&#39;');
 }
+

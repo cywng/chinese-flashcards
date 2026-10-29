@@ -924,5 +924,309 @@ export const STARTER_DECKS = [
         status: 'new'
       }
     ]
+  },
+  {
+    id: 'deck-level9-lesson1',
+    name: '📖 Level 9 Lesson 1 (Lesson Notes)',
+    description: 'Precision vocabulary from today\'s lesson: social interaction, visiting relatives, idioms, nuanced verbs, and daily communication.',
+    icon: '📖',
+    cards: [
+      {
+        id: 'l9-1',
+        hanzi: '幼儿园',
+        pinyin: 'yòu ér yuán',
+        meaning: 'Kindergarten / preschool',
+        notes: '幼 (young/infant) + 儿 (child) + 园 (garden/park).',
+        status: 'new'
+      },
+      {
+        id: 'l9-2',
+        hanzi: '探亲访友',
+        pinyin: 'tàn qīn fǎng yǒu',
+        meaning: 'Visit relatives and friends',
+        notes: '探亲 (visit family) + 访友 (visit friends). Example: "上次，我和爸爸去沈阳探亲访友。"',
+        status: 'new'
+      },
+      {
+        id: 'l9-3',
+        hanzi: '拜访',
+        pinyin: 'bài fǎng',
+        meaning: 'Visit / call on someone formally',
+        notes: '拜访朋友 (pay a formal or respectful visit to friends). More formal than 看朋友.',
+        status: 'new'
+      },
+      {
+        id: 'l9-4',
+        hanzi: '探望',
+        pinyin: 'tàn wàng',
+        meaning: 'Visit / look in on someone (especially someone sick or elderly)',
+        notes: '探望/探视生病的人 (visit patients or relatives in need of care).',
+        status: 'new'
+      },
+      {
+        id: 'l9-5',
+        hanzi: '词不达意',
+        pinyin: 'cí bù dá yì',
+        meaning: 'Words fail to convey the intended meaning; poorly expressed',
+        notes: 'Idiom: 词 (words) + 不 (not) + 达 (convey/reach) + 意 (meaning/intent). Essential idiom for language learners!',
+        status: 'new'
+      },
+      {
+        id: 'l9-6',
+        hanzi: '利用',
+        pinyin: 'lì yòng',
+        meaning: 'Utilize / make good use of / take advantage of',
+        notes: '好好地利用 sth (make good use of something/resources).',
+        status: 'new'
+      },
+      {
+        id: 'l9-7',
+        hanzi: '使用',
+        pinyin: 'shǐ yòng',
+        meaning: 'To use / operate / employ (tools, tech, apps)',
+        notes: '你使用哪一个AI？怎么使用？(Which AI do you use? How do you use it?)',
+        status: 'new'
+      },
+      {
+        id: 'l9-8',
+        hanzi: '实用',
+        pinyin: 'shí yòng',
+        meaning: 'Useful / practical / functional',
+        notes: '你觉得Claude实用吗？这个很好用/实用。Compare: 好用 (easy to use) vs 实用 (practical value).',
+        status: 'new'
+      },
+      {
+        id: 'l9-9',
+        hanzi: '普通话',
+        pinyin: 'pǔ tōng huà',
+        meaning: 'Standard Mandarin Chinese',
+        notes: '普 (universal) + 通 (common/fluent) + 话 (speech). Compare: 普通话水平等级 (Mandarin proficiency level).',
+        status: 'new'
+      },
+      {
+        id: 'l9-10',
+        hanzi: '方言',
+        pinyin: 'fāng yán',
+        meaning: 'Regional dialect',
+        notes: '方 (regional/place) + 言 (speech/language). Distinct dialects across provinces like Fujian & Zhejiang.',
+        status: 'new'
+      },
+      {
+        id: 'l9-11',
+        hanzi: '行人',
+        pinyin: 'xíng rén',
+        meaning: 'Pedestrian / person on foot 🚶',
+        notes: '行 (to walk/go) + 人 (person). 行人过马路 (pedestrians crossing the street).',
+        status: 'new'
+      },
+      {
+        id: 'l9-12',
+        hanzi: '步行',
+        pinyin: 'bù xíng',
+        meaning: 'Walk on foot (as a form of travel/transit)',
+        notes: '步 (step) + 行 (walk). 步行十分钟 (10 minutes on foot).',
+        status: 'new'
+      },
+      {
+        id: 'l9-13',
+        hanzi: '计划',
+        pinyin: 'jì huà',
+        meaning: 'Plan (n.) / to plan (v.)',
+        notes: '你有什么计划？我计划去中国玩。(What are your plans? I plan to travel to China.)',
+        status: 'new'
+      },
+      {
+        id: 'l9-14',
+        hanzi: '影响',
+        pinyin: 'yǐng xiǎng',
+        meaning: 'Influence / affect / impact',
+        notes: '影 (shadow) + 响 (echo/sound). 产生深远的影响 (have a profound impact).',
+        status: 'new'
+      },
+      {
+        id: 'l9-15',
+        hanzi: '流行',
+        pinyin: 'liú xíng',
+        meaning: 'Popular / trending / in fashion',
+        notes: '现在流行什么？很流行 (What is trending right now? Very popular).',
+        status: 'new'
+      },
+      {
+        id: 'l9-16',
+        hanzi: '泾渭分明',
+        pinyin: 'jīng wèi fēn míng',
+        meaning: 'Clear-cut difference / sharply demarcated',
+        notes: 'Classic idiom: The Jing and Wei rivers meet but remain visibly clear and muddy respectively. Means boundaries/differences are crystal clear.',
+        status: 'new'
+      },
+      {
+        id: 'l9-17',
+        hanzi: '语文',
+        pinyin: 'yǔ wén',
+        meaning: 'Chinese language arts and literature',
+        notes: '语 (spoken language) + 文 (written literature). Core subject in Chinese schools.',
+        status: 'new'
+      },
+      {
+        id: 'l9-18',
+        hanzi: '词汇',
+        pinyin: 'cí huì',
+        meaning: 'Vocabulary / lexicon',
+        notes: '词 (words) + 汇 (collection). 积累高级词汇 (accumulate advanced vocabulary).',
+        status: 'new'
+      },
+      {
+        id: 'l9-19',
+        hanzi: '科学',
+        pinyin: 'kē xué',
+        meaning: 'Science / scientific',
+        notes: '科 (branch of study) + 学 (learning).',
+        status: 'new'
+      },
+      {
+        id: 'l9-20',
+        hanzi: '数学',
+        pinyin: 'shù xué',
+        meaning: 'Mathematics / maths',
+        notes: '数 (numbers/counting) + 学 (learning).',
+        status: 'new'
+      },
+      {
+        id: 'l9-21',
+        hanzi: '双学位',
+        pinyin: 'shuāng xué wèi',
+        meaning: 'Double degree / dual degree',
+        notes: '双 (double) + 学位 (academic degree).',
+        status: 'new'
+      },
+      {
+        id: 'l9-22',
+        hanzi: '通知',
+        pinyin: 'tōng zhī',
+        meaning: 'Notice / announcement (n.) / to notify (v.)',
+        notes: '通 (throughout) + 知 (know). 接到通知 (receive a notice); 通知大家 (inform everyone).',
+        status: 'new'
+      },
+      {
+        id: 'l9-23',
+        hanzi: '马马虎虎',
+        pinyin: 'mǎ mǎ hū hū',
+        meaning: 'So-so / mediocre / casual',
+        notes: 'Idiom: 我的中文水平一般般/马马虎虎。(My Chinese is just so-so.)',
+        status: 'new'
+      },
+      {
+        id: 'l9-24',
+        hanzi: '模糊',
+        pinyin: 'mó hu',
+        meaning: 'Vague / blurred / indistinct',
+        notes: '模模糊糊 (vaguely / hazily). Compare: 精确 (precise) vs 模糊 (vague).',
+        status: 'new'
+      },
+      {
+        id: 'l9-25',
+        hanzi: '精确',
+        pinyin: 'jīng què',
+        meaning: 'Precise / exact / accurate',
+        notes: '用词很精确 (word choice is very precise and accurate).',
+        status: 'new'
+      },
+      {
+        id: 'l9-26',
+        hanzi: '准确',
+        pinyin: 'zhǔn què',
+        meaning: 'Correct / accurate / on target',
+        notes: '准 (standard/accurate) + 确 (true/solid).',
+        status: 'new'
+      },
+      {
+        id: 'l9-27',
+        hanzi: '恰当',
+        pinyin: 'qià dàng',
+        meaning: 'Appropriate / fitting / proper',
+        notes: '恰 (just/fitting) + 当 (suitable). 恰当的表达 (appropriate expression).',
+        status: 'new'
+      },
+      {
+        id: 'l9-28',
+        hanzi: '同事',
+        pinyin: 'tóng shì',
+        meaning: 'Colleague / coworker',
+        notes: '同 (same) + 事 (work). Contrast with: 同学 (classmate).',
+        status: 'new'
+      },
+      {
+        id: 'l9-29',
+        hanzi: '同学',
+        pinyin: 'tóng xué',
+        meaning: 'Classmate / schoolmate',
+        notes: '同 (same) + 学 (study). Frequently used as a friendly address in China.',
+        status: 'new'
+      },
+      {
+        id: 'l9-30',
+        hanzi: '寒暄',
+        pinyin: 'hán xuān',
+        meaning: 'Exchange pleasantries / social small talk',
+        notes: 'Literally "cold and warm" (asking about weather/health). Polite, formal small talk upon meeting.',
+        status: 'new'
+      },
+      {
+        id: 'l9-31',
+        hanzi: '闲聊',
+        pinyin: 'xián liáo',
+        meaning: 'Casual chitchat / shooting the breeze',
+        notes: '闲 (leisure/free) + 聊 (chat). Informal casual conversation.',
+        status: 'new'
+      },
+      {
+        id: 'l9-32',
+        hanzi: '热火朝天',
+        pinyin: 'rè huǒ cháo tiān',
+        meaning: 'In full swing / bustling with excitement',
+        notes: 'Idiom from lesson: "boss一离开 office，我和同事聊得热火朝天" (As soon as the boss left the office, my colleagues and I chatted up a storm!).',
+        status: 'new'
+      },
+      {
+        id: 'l9-33',
+        hanzi: '开玩笑',
+        pinyin: 'kāi wán xiào',
+        meaning: 'Joke / tease / kid around',
+        notes: '别开玩笑了 (Stop joking around / You must be kidding!).',
+        status: 'new'
+      },
+      {
+        id: 'l9-34',
+        hanzi: '联想',
+        pinyin: 'lián xiǎng',
+        meaning: 'Associate / mental connection',
+        notes: '联 (connect) + 想 (think). Mental association between ideas or memories.',
+        status: 'new'
+      },
+      {
+        id: 'l9-35',
+        hanzi: '推断',
+        pinyin: 'tuī duàn',
+        meaning: 'Infer / deduce / extrapolation',
+        notes: '推 (push/reason) + 断 (judge). Deduce from clues and context.',
+        status: 'new'
+      },
+      {
+        id: 'l9-36',
+        hanzi: '大概',
+        pinyin: 'dà gài',
+        meaning: 'Approximately / probably / roughly (adverb)',
+        notes: '大概需要两天 (It will probably take roughly two days).',
+        status: 'new'
+      },
+      {
+        id: 'l9-37',
+        hanzi: '大纲',
+        pinyin: 'dà gāng',
+        meaning: 'Outline / framework / syllabus',
+        notes: '大 (major) + 纲 (key link/framework). 复习大纲 (revision outline), 旅行大纲.',
+        status: 'new'
+      }
+    ]
   }
 ];
