@@ -1,25 +1,9 @@
 # 点菜通 · Hanzi Menu & Vocab Flashcards
 
-A zero-build, mobile-first Progressive Web App (PWA) hosted on GitHub Pages for heritage Chinese learners to master **reading menus** and **recalling precise vocabulary**.
+Vibe coded webapp
 
 ---
 
-## ⚡ Quick Start
-
-```bash
-# Preview locally
-python3 -m http.server 8000
-# Open http://localhost:8000
-```
-
-```bash
-# Deploy to GitHub Pages (1 minute)
-git remote add origin https://github.com/<username>/<repo>.git
-git push -u origin main
-# In GitHub Repo Settings -> Pages -> Source: GitHub Actions (or main / root)
-```
-
----
 
 ## 🎴 Core Functions & How to Use
 
