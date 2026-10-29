@@ -1380,6 +1380,275 @@ textarea {
   white-space: nowrap;
 }
 
+/* ==================== DECK SWITCHER & GROUP TOGGLES ==================== */
+.deck-toggle-pill-btn {
+  background: var(--bg-elevated);
+  border-color: var(--accent-soft);
+  color: var(--accent-primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deck-origin-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: var(--accent-soft);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.back-top-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Group Launchers in Decks Tab */
+.group-launchers-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.launcher-pill-btn {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.launcher-pill-btn:hover,
+.launcher-pill-btn:active {
+  transform: translateY(-1px);
+}
+
+.launcher-lessons {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+}
+
+.launcher-menu {
+  border-color: rgba(249, 115, 22, 0.4);
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--accent-primary);
+}
+
+.launcher-all {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-good);
+}
+
+.launcher-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Category Filter Tabs in Decks Tab */
+.deck-category-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-input);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.cat-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.cat-tab.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+/* Deck Switcher Modal */
+.modal-deck-switcher {
+  max-width: 520px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.deck-group-presets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.group-preset-btn {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.group-preset-btn:hover,
+.group-preset-btn.active-preset {
+  border-color: var(--accent-primary);
+  background: var(--accent-soft);
+}
+
+.group-preset-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.group-preset-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.group-preset-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.switcher-divider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-color);
+}
+
+.divider-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.deck-switcher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 280px;
+  padding-right: 2px;
+}
+
+.switcher-deck-item {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.switcher-deck-item:hover,
+.switcher-deck-item.active-item {
+  border-color: var(--accent-primary);
+  background: var(--accent-soft);
+}
+
+.switcher-deck-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.switcher-deck-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.switcher-deck-titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.switcher-deck-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.switcher-deck-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.switcher-deck-action {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.multi-select-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.multi-select-tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 420px) {
+  .group-launchers-row,
+  .deck-group-presets {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 420px) {
   .hanzi-display {
     font-size: 3.6rem;

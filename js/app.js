@@ -15,6 +15,9 @@ import {
 const session = new StudySession();
 let settings = storage.getSettings();
 let currentPreviewItems = [];
+let isMultiSelectMode = false;
+const selectedDeckIdsForMulti = new Set();
+let activeDeckCategory = 'all';
 
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', () => {
@@ -105,7 +108,7 @@ function initHeaderControls() {
 
   const headerDeckBtn = document.getElementById('headerDeckBtn');
   headerDeckBtn?.addEventListener('click', () => {
-    switchTab('view-decks');
+    openDeckSwitcherModal();
   });
 }
 
@@ -151,8 +154,13 @@ function updateHeaderDeckPill() {
   if (!deck) return;
   const iconEl = document.getElementById('headerDeckIcon');
   const nameEl = document.getElementById('headerDeckName');
+  const studyDeckBtnLabel = document.getElementById('studyDeckBtnLabel');
   if (iconEl) iconEl.textContent = deck.icon || '🍜';
   if (nameEl) nameEl.textContent = deck.name;
+  if (studyDeckBtnLabel) {
+    const raw = deck.name.replace(/^[^\s]+\s+/, '').split('(')[0].trim() || deck.name;
+    studyDeckBtnLabel.textContent = raw.length > 8 ? raw.slice(0, 8) + '…' : raw;
+  }
 }
 
 // ==================== STUDY VIEW & FLASHCARD ENGINE ====================
@@ -187,6 +195,10 @@ function initStudyControls() {
     updateModeUI('recall-first');
     session.isFlipped = false;
     renderStudyView();
+  });
+
+  document.getElementById('studyDeckSwitchBtn')?.addEventListener('click', () => {
+    openDeckSwitcherModal();
   });
 
   const filterSelect = document.getElementById('studyFilterSelect');
@@ -399,6 +411,31 @@ function renderStudyView() {
     badge.className = `status-badge status-${card.status || 'new'}`;
     badge.textContent =
       card.status === 'mastered' ? 'Mastered' : card.status === 'learning' ? 'Tricky' : 'New';
+  }
+
+  // Deck origin badge (shown in multi-deck / combined modes)
+  const isCombinedGroup = storage.getActiveDeckId().startsWith('group:');
+  const originText = card._deckName
+    ? `${card._deckIcon || ''} ${card._deckName.replace(/^[^\s]+\s+/, '').split('(')[0]}`.trim()
+    : '';
+
+  const frontOriginBadge = document.getElementById('frontDeckOriginBadge');
+  const backOriginBadge = document.getElementById('backDeckOriginBadge');
+  if (frontOriginBadge) {
+    if (isCombinedGroup && originText) {
+      frontOriginBadge.textContent = originText;
+      frontOriginBadge.classList.remove('hidden');
+    } else {
+      frontOriginBadge.classList.add('hidden');
+    }
+  }
+  if (backOriginBadge) {
+    if (isCombinedGroup && originText) {
+      backOriginBadge.textContent = originText;
+      backOriginBadge.classList.remove('hidden');
+    } else {
+      backOriginBadge.classList.add('hidden');
+    }
   }
 
   // Front content based on studyMode ('hanzi-first' vs 'recall-first')
@@ -868,6 +905,41 @@ function initDecksAndSettingsView() {
     speech.speak('老板，来一份红烧牛肉面，再来一杯去冰珍珠奶茶！');
   });
 
+  // Quick group launchers in Decks tab
+  document.getElementById('launchLessonsOnlyBtn')?.addEventListener('click', () => {
+    storage.setActiveDeckId('group:lessons');
+    loadActiveDeckIntoStudy(false);
+    refreshAllViews();
+    switchTab('view-study');
+    showToast('📖 Studying Lessons Only');
+  });
+
+  document.getElementById('launchMenuOnlyBtn')?.addEventListener('click', () => {
+    storage.setActiveDeckId('group:menu');
+    loadActiveDeckIntoStudy(false);
+    refreshAllViews();
+    switchTab('view-study');
+    showToast('🍜 Studying All Menu Decks');
+  });
+
+  document.getElementById('launchAllDecksBtn')?.addEventListener('click', () => {
+    storage.setActiveDeckId('group:all');
+    loadActiveDeckIntoStudy(false);
+    refreshAllViews();
+    switchTab('view-study');
+    showToast('🌟 Studying All Decks Combined');
+  });
+
+  // Category filter tabs
+  document.querySelectorAll('.cat-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeDeckCategory = tab.dataset.cat || 'all';
+      renderDecksGrid();
+    });
+  });
+
   // Backup & Export
   document.getElementById('exportJsonBtn')?.addEventListener('click', () => {
     const json = storage.exportAllJSON();
@@ -936,8 +1008,37 @@ function renderDecksGrid() {
   const decks = storage.getDecks();
   const activeId = storage.getActiveDeckId();
 
+  // Update launcher and category tab counts
+  const lessonDecks = decks.filter(d => d.category === 'lesson' || /lesson|课|第/i.test(d.name));
+  const lessonWords = lessonDecks.reduce((s, d) => s + d.cards.length, 0);
+  const menuDecks = decks.filter(d => d.category === 'menu');
+  const menuWords = menuDecks.reduce((s, d) => s + d.cards.length, 0);
+  const totalWords = decks.reduce((s, d) => s + d.cards.length, 0);
+
+  const lCount = document.getElementById('launcherLessonsCount');
+  const mCount = document.getElementById('launcherMenuCount');
+  const aCount = document.getElementById('launcherAllCount');
+  if (lCount) lCount.textContent = String(lessonWords);
+  if (mCount) mCount.textContent = String(menuWords);
+  if (aCount) aCount.textContent = String(totalWords);
+
+  const catAll = document.getElementById('catCountAll');
+  const catLesson = document.getElementById('catCountLesson');
+  const catMenu = document.getElementById('catCountMenu');
+  if (catAll) catAll.textContent = String(decks.length);
+  if (catLesson) catLesson.textContent = String(lessonDecks.length);
+  if (catMenu) catMenu.textContent = String(menuDecks.length);
+
+  // Filter display by category
+  let displayDecks = decks;
+  if (activeDeckCategory === 'lesson') {
+    displayDecks = lessonDecks;
+  } else if (activeDeckCategory === 'menu') {
+    displayDecks = menuDecks;
+  }
+
   container.innerHTML = '';
-  decks.forEach(deck => {
+  displayDecks.forEach(deck => {
     const total = deck.cards.length;
     const mastered = deck.cards.filter(c => c.status === 'mastered').length;
     const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
@@ -1070,6 +1171,161 @@ function initModals() {
     closeEditCard();
     refreshAllViews();
   });
+
+  // Deck Switcher Modal
+  document.getElementById('closeDeckSwitcherModalBtn')?.addEventListener('click', closeDeckSwitcherModal);
+
+  document.querySelectorAll('.group-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetGroup = btn.dataset.deckId;
+      storage.setActiveDeckId(targetGroup);
+      loadActiveDeckIntoStudy(false);
+      refreshAllViews();
+      closeDeckSwitcherModal();
+      showToast(
+        targetGroup === 'group:lessons'
+          ? '📖 Studying Lessons Only'
+          : targetGroup === 'group:menu'
+          ? '🍜 Studying All Menu Decks'
+          : '🌟 Studying All Decks Combined'
+      );
+    });
+  });
+
+  document.getElementById('toggleMultiSelectModeBtn')?.addEventListener('click', () => {
+    isMultiSelectMode = !isMultiSelectMode;
+    renderDeckSwitcherModalContent();
+  });
+
+  document.getElementById('selectAllDecksBtn')?.addEventListener('click', () => {
+    storage.getDecks().forEach(d => selectedDeckIdsForMulti.add(d.id));
+    renderDeckSwitcherModalContent();
+  });
+
+  document.getElementById('clearSelectedDecksBtn')?.addEventListener('click', () => {
+    selectedDeckIdsForMulti.clear();
+    renderDeckSwitcherModalContent();
+  });
+
+  document.getElementById('applyMultiDeckBtn')?.addEventListener('click', () => {
+    if (selectedDeckIdsForMulti.size === 0) {
+      showToast('Please select at least one deck');
+      return;
+    }
+    const customId = `group:custom:${Array.from(selectedDeckIdsForMulti).join(',')}`;
+    storage.setActiveDeckId(customId);
+    loadActiveDeckIntoStudy(false);
+    refreshAllViews();
+    closeDeckSwitcherModal();
+    showToast(`🎛️ Studying ${selectedDeckIdsForMulti.size} selected decks`);
+  });
+}
+
+function openDeckSwitcherModal() {
+  const modal = document.getElementById('deckSwitcherModal');
+  if (!modal) return;
+  isMultiSelectMode = false;
+  selectedDeckIdsForMulti.clear();
+  renderDeckSwitcherModalContent();
+  modal.classList.remove('hidden');
+}
+
+function closeDeckSwitcherModal() {
+  const modal = document.getElementById('deckSwitcherModal');
+  modal?.classList.add('hidden');
+}
+
+function renderDeckSwitcherModalContent() {
+  const activeId = storage.getActiveDeckId();
+  const decks = storage.getDecks();
+
+  // Counts for groups
+  const lessonDecks = decks.filter(d => d.category === 'lesson' || /lesson|课|第/i.test(d.name));
+  const lessonCount = lessonDecks.reduce((sum, d) => sum + d.cards.length, 0);
+
+  const menuDecks = decks.filter(d => d.category === 'menu');
+  const menuCount = menuDecks.reduce((sum, d) => sum + d.cards.length, 0);
+
+  const totalCount = decks.reduce((sum, d) => sum + d.cards.length, 0);
+
+  const groupLessonsCount = document.getElementById('groupLessonsCount');
+  const groupMenuCount = document.getElementById('groupMenuCount');
+  const groupAllCount = document.getElementById('groupAllCount');
+  if (groupLessonsCount) groupLessonsCount.textContent = `${lessonDecks.length} Lessons (${lessonCount} words)`;
+  if (groupMenuCount) groupMenuCount.textContent = `5 Decks (${menuCount} words)`;
+  if (groupAllCount) groupAllCount.textContent = `${decks.length} Decks (${totalCount} words)`;
+
+  // Highlight active preset button if active
+  document.querySelectorAll('.group-preset-btn').forEach(btn => {
+    btn.classList.toggle('active-preset', btn.dataset.deckId === activeId);
+  });
+
+  const listContainer = document.getElementById('deckSwitcherList');
+  const multiFooter = document.getElementById('multiSelectFooter');
+  const multiToggleBtn = document.getElementById('toggleMultiSelectModeBtn');
+
+  if (multiToggleBtn) {
+    multiToggleBtn.textContent = isMultiSelectMode ? '✕ Single Mode' : '🎛️ Multi-Select';
+  }
+  if (multiFooter) {
+    multiFooter.classList.toggle('hidden', !isMultiSelectMode);
+  }
+
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
+
+  decks.forEach(deck => {
+    const isChecked = selectedDeckIdsForMulti.has(deck.id);
+    const isCurrentActive = deck.id === activeId;
+
+    const item = document.createElement('div');
+    item.className = `switcher-deck-item ${isCurrentActive ? 'active-item' : ''}`;
+    item.innerHTML = `
+      <div class="switcher-deck-info">
+        ${
+          isMultiSelectMode
+            ? `<input type="checkbox" class="switcher-deck-checkbox" data-deck-id="${deck.id}" ${isChecked ? 'checked' : ''} />`
+            : `<span class="switcher-deck-icon">${escapeHtml(deck.icon || '🍜')}</span>`
+        }
+        <div class="switcher-deck-titles">
+          <div class="switcher-deck-name">${escapeHtml(deck.name)}</div>
+          <div class="switcher-deck-meta">${deck.cards.length} words · ${deck.category === 'lesson' ? '📖 Lesson' : '🍜 Menu'}</div>
+        </div>
+      </div>
+      <div class="switcher-deck-action">
+        ${isMultiSelectMode ? (isChecked ? '☑ Selected' : '☐ Tap to pick') : isCurrentActive ? '✓ Active' : 'Select'}
+      </div>
+    `;
+
+    item.addEventListener('click', () => {
+      if (isMultiSelectMode) {
+        if (selectedDeckIdsForMulti.has(deck.id)) {
+          selectedDeckIdsForMulti.delete(deck.id);
+        } else {
+          selectedDeckIdsForMulti.add(deck.id);
+        }
+        renderDeckSwitcherModalContent();
+      } else {
+        storage.setActiveDeckId(deck.id);
+        loadActiveDeckIntoStudy(false);
+        refreshAllViews();
+        closeDeckSwitcherModal();
+        showToast(`Selected "${deck.name}"`);
+      }
+    });
+
+    listContainer.appendChild(item);
+  });
+
+  // Update multi-select count
+  const countSpan = document.getElementById('multiDeckSelectedCount');
+  if (countSpan) {
+    let wordCount = 0;
+    decks.filter(d => selectedDeckIdsForMulti.has(d.id)).forEach(d => {
+      wordCount += d.cards.length;
+    });
+    countSpan.textContent = String(wordCount);
+  }
 }
 
 function openNewDeckModal() {

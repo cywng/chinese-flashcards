@@ -33,11 +33,27 @@ export const storage = {
         this.saveDecks(initial);
         return initial;
       }
-      const parsed = JSON.parse(raw);
+      let parsed = JSON.parse(raw);
       if (!Array.isArray(parsed) || parsed.length === 0) {
         const initial = cloneDeep(STARTER_DECKS);
         this.saveDecks(initial);
         return initial;
+      }
+
+      // Upgrade check: ensure all starter decks (e.g. deck-level9-lesson1) & categories are present
+      let modified = false;
+      for (const starter of STARTER_DECKS) {
+        const existing = parsed.find(d => d.id === starter.id);
+        if (!existing) {
+          parsed.push(cloneDeep(starter));
+          modified = true;
+        } else if (!existing.category && starter.category) {
+          existing.category = starter.category;
+          modified = true;
+        }
+      }
+      if (modified) {
+        this.saveDecks(parsed);
       }
       return parsed;
     } catch (_) {
@@ -56,8 +72,10 @@ export const storage = {
   getActiveDeckId() {
     const decks = this.getDecks();
     const savedId = localStorage.getItem(STORAGE_KEYS.ACTIVE_DECK);
-    if (savedId && decks.some(d => d.id === savedId)) {
-      return savedId;
+    if (savedId) {
+      if (savedId.startsWith('group:') || decks.some(d => d.id === savedId)) {
+        return savedId;
+      }
     }
     const firstId = decks[0]?.id || 'deck-cooking-flavors';
     localStorage.setItem(STORAGE_KEYS.ACTIVE_DECK, firstId);
@@ -71,16 +89,114 @@ export const storage = {
   getActiveDeck() {
     const decks = this.getDecks();
     const activeId = this.getActiveDeckId();
+
+    // Group: Lessons Only
+    if (activeId === 'group:lessons') {
+      const lessonDecks = decks.filter(d => d.category === 'lesson' || /lesson|课|第/i.test(d.name));
+      const combinedCards = [];
+      for (const d of lessonDecks) {
+        for (const c of d.cards) {
+          combinedCards.push({
+            ...c,
+            _deckId: d.id,
+            _deckName: d.name,
+            _deckIcon: d.icon || '📖'
+          });
+        }
+      }
+      return {
+        id: 'group:lessons',
+        name: '📖 Lessons Only',
+        icon: '📖',
+        category: 'group',
+        description: `All lesson decks combined (${lessonDecks.length} lesson${lessonDecks.length > 1 ? 's' : ''}, ${combinedCards.length} words)`,
+        cards: combinedCards
+      };
+    }
+
+    // Group: Menu & Food Only
+    if (activeId === 'group:menu') {
+      const menuDecks = decks.filter(d => d.category === 'menu');
+      const combinedCards = [];
+      for (const d of menuDecks) {
+        for (const c of d.cards) {
+          combinedCards.push({
+            ...c,
+            _deckId: d.id,
+            _deckName: d.name,
+            _deckIcon: d.icon || '🍜'
+          });
+        }
+      }
+      return {
+        id: 'group:menu',
+        name: '🍜 All Menu Decks',
+        icon: '🍜',
+        category: 'group',
+        description: `All 5 Chinese menu & food decks combined (${combinedCards.length} words)`,
+        cards: combinedCards
+      };
+    }
+
+    // Group: All Decks Combined
+    if (activeId === 'group:all') {
+      const combinedCards = [];
+      for (const d of decks) {
+        for (const c of d.cards) {
+          combinedCards.push({
+            ...c,
+            _deckId: d.id,
+            _deckName: d.name,
+            _deckIcon: d.icon || '🗂️'
+          });
+        }
+      }
+      return {
+        id: 'group:all',
+        name: '🌟 All Decks Combined',
+        icon: '🌟',
+        category: 'group',
+        description: `All vocabulary cards across all ${decks.length} decks (${combinedCards.length} words)`,
+        cards: combinedCards
+      };
+    }
+
+    // Group: Custom Multi-Selection
+    if (activeId.startsWith('group:custom:')) {
+      const selectedIds = new Set(activeId.replace('group:custom:', '').split(',').filter(Boolean));
+      const targetDecks = decks.filter(d => selectedIds.has(d.id));
+      const combinedCards = [];
+      for (const d of targetDecks) {
+        for (const c of d.cards) {
+          combinedCards.push({
+            ...c,
+            _deckId: d.id,
+            _deckName: d.name,
+            _deckIcon: d.icon || '🎛️'
+          });
+        }
+      }
+      return {
+        id: activeId,
+        name: `🎛️ Custom Selection (${targetDecks.length} Decks)`,
+        icon: '🎛️',
+        category: 'group',
+        description: targetDecks.map(d => d.name).join(' · '),
+        cards: combinedCards
+      };
+    }
+
     return decks.find(d => d.id === activeId) || decks[0];
   },
 
-  createDeck(name, description = 'Custom vocabulary list', icon = '📝') {
+  createDeck(name, description = 'Custom vocabulary list', icon = '📝', category = 'custom') {
     const decks = this.getDecks();
     const newDeck = {
       id: 'deck-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
       name: name.trim() || 'Custom Vocab List',
       description: description.trim(),
       icon,
+      category,
       cards: []
     };
     decks.unshift(newDeck);
@@ -90,6 +206,7 @@ export const storage = {
   },
 
   deleteDeck(deckId) {
+    if (deckId.startsWith('group:')) return this.getDecks();
     let decks = this.getDecks();
     if (decks.length <= 1) {
       throw new Error('Cannot delete the last remaining deck.');
@@ -104,7 +221,15 @@ export const storage = {
 
   addCardsToDeck(deckId, newCards) {
     const decks = this.getDecks();
-    const deck = decks.find(d => d.id === deckId);
+    // If deckId is a group, add to first actual deck or fallback
+    let deck = decks.find(d => d.id === deckId);
+    if (!deck && deckId.startsWith('group:')) {
+      if (deckId === 'group:lessons') {
+        deck = decks.find(d => d.category === 'lesson') || decks[0];
+      } else {
+        deck = decks[0];
+      }
+    }
     if (!deck) return { added: 0, updated: 0 };
 
     let added = 0;
@@ -139,14 +264,43 @@ export const storage = {
 
   updateCard(deckId, cardId, updates) {
     const decks = this.getDecks();
-    const deck = decks.find(d => d.id === deckId);
-    if (!deck) return null;
-    const card = deck.cards.find(c => c.id === cardId);
-    if (!card) return null;
+    let targetCard = null;
 
-    Object.assign(card, updates);
+    // Search in specified deck first if not a group
+    if (!deckId.startsWith('group:')) {
+      const deck = decks.find(d => d.id === deckId);
+      if (deck) {
+        targetCard = deck.cards.find(c => c.id === cardId);
+      }
+    }
+
+    // If not found (or deckId was a group), search across all decks
+    if (!targetCard) {
+      for (const d of decks) {
+        targetCard = d.cards.find(c => c.id === cardId);
+        if (targetCard) break;
+      }
+    }
+
+    if (!targetCard) return null;
+    Object.assign(targetCard, updates);
     this.saveDecks(decks);
-    return card;
+    return targetCard;
+  },
+
+  deleteCard(deckId, cardId) {
+    const decks = this.getDecks();
+    let deleted = false;
+    for (const d of decks) {
+      const prevLen = d.cards.length;
+      d.cards = d.cards.filter(c => c.id !== cardId);
+      if (d.cards.length !== prevLen) {
+        deleted = true;
+        break;
+      }
+    }
+    if (deleted) this.saveDecks(decks);
+    return deleted;
   },
 
   deleteCard(deckId, cardId) {

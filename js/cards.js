@@ -103,7 +103,7 @@ export class StudySession {
     }
 
     card.status = newStatus;
-    storage.updateCard(this.deckId, card.id, { status: newStatus });
+    storage.updateCard(card._deckId || this.deckId, card.id, { status: newStatus });
 
     this.currentIndex++;
     this.isFlipped = false;

@@ -8,6 +8,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-cooking-flavors',
     name: '🔥 烹饪与口味 (Cooking & Flavors)',
+    category: 'menu',
     description: 'Essential cooking methods (roast, braise, steam, fry) and flavor profiles (soy, pepper, garlic, spicy) found on every Chinese menu.',
     icon: '🔥',
     cards: [
@@ -208,6 +209,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-meats-seafood',
     name: '🥩 肉类与海鲜 (Meats, Cuts & Seafood)',
+    category: 'menu',
     description: 'Specific cuts of pork, beef, poultry, offal, and seafood so you always know what part of the animal you are ordering.',
     icon: '🥩',
     cards: [
@@ -392,6 +394,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-noodles-rice',
     name: '🍜 面食、米饭与小吃 (Noodles, Rice & Snacks)',
+    category: 'menu',
     description: 'Regional noodle bowls, rice toppers, claypot rice, dumplings, and street buns across China.',
     icon: '🍜',
     cards: [
@@ -576,6 +579,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-bubble-tea',
     name: '🧋 奶茶与饮品点单 (Bubble Tea & Drinks)',
+    category: 'menu',
     description: 'Tea bases, milk styles, boba toppings, fruit teas, and ice/sweetness customization levels at Heytea, Chagee, Nayuki, and Mixue.',
     icon: '🧋',
     cards: [
@@ -760,6 +764,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-classic-dishes',
     name: '🥘 中国餐厅必点名菜 (Classic Dishes)',
+    category: 'menu',
     description: '20 iconic restaurant dishes found across China so you can immediately read the signature section of any menu.',
     icon: '🥘',
     cards: [
@@ -928,6 +933,7 @@ export const STARTER_DECKS = [
   {
     id: 'deck-level9-lesson1',
     name: '📖 Level 9 Lesson 1 (Lesson Notes)',
+    category: 'lesson',
     description: 'Precision vocabulary from today\'s lesson: social interaction, visiting relatives, idioms, nuanced verbs, and daily communication.',
     icon: '📖',
     cards: [
