@@ -1,4 +1,4 @@
-# 点菜通 · Hanzi Menu & Vocab Flashcards
+Hanzi Vocab Flashcards
 
 Vibe coded webapp
 
