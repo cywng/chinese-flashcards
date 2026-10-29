@@ -1,4 +1,4 @@
-Hanzi Vocab Flashcards
+# Hanzi Vocab Flashcards
 
 Vibe coded webapp
 
