@@ -57,11 +57,14 @@ class SpeechController {
    */
   unlockAudio() {
     if (!this.supported || this.unlocked) return;
+    this.unlocked = true;
+    // Empty-utterance unlock is only needed for iOS Safari; on desktop Chromium it can race with the first speak()
+    const isIOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (!isIOS) return;
     try {
       const silent = new SpeechSynthesisUtterance('');
       silent.volume = 0;
       window.speechSynthesis.speak(silent);
-      this.unlocked = true;
     } catch (_) {
       // Ignore
     }
@@ -87,28 +90,51 @@ class SpeechController {
       return false;
     }
 
+    const allVoices = window.speechSynthesis.getVoices() || [];
+    if (allVoices.length === 0) {
+      if (options.onError) options.onError('no-voices');
+      return false;
+    }
+
     // Extract Chinese characters or clean out English parentheticals if any
     const cleanText = text.replace(/\([a-zA-Z0-9\s,]+\)/g, '').trim() || text;
 
     try {
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.lang = 'zh-CN';
-      utterance.rate = options.rate || this.rate;
-      utterance.pitch = 1.0;
-
-      const voice = this.getBestVoice();
-      if (voice) {
-        utterance.voice = voice;
-        utterance.lang = voice.lang || 'zh-CN';
+      const wasBusy = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+      if (wasBusy) {
+        window.speechSynthesis.cancel();
+      }
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
       }
 
-      if (options.onStart) utterance.onstart = options.onStart;
-      if (options.onEnd) utterance.onend = options.onEnd;
-      if (options.onError) utterance.onerror = options.onError;
+      const startSpeak = () => {
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = 'zh-CN';
+        utterance.rate = options.rate || this.rate;
+        utterance.pitch = 1.0;
 
-      window.speechSynthesis.speak(utterance);
+        const voice = this.getBestVoice();
+        if (voice) {
+          utterance.voice = voice;
+          utterance.lang = voice.lang || 'zh-CN';
+        }
+
+        if (options.onStart) utterance.onstart = options.onStart;
+        if (options.onEnd) utterance.onend = options.onEnd;
+        utterance.onerror = err => {
+          if (options.onError) options.onError(err);
+        };
+
+        window.speechSynthesis.speak(utterance);
+      };
+
+      // Avoid Chromium bug where cancel() synchronously drops the next speak()
+      if (wasBusy) {
+        setTimeout(startSpeak, 50);
+      } else {
+        startSpeak();
+      }
       return true;
     } catch (err) {
       if (options.onError) options.onError(err);

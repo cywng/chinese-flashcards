@@ -303,15 +303,6 @@ export const storage = {
     return deleted;
   },
 
-  deleteCard(deckId, cardId) {
-    const decks = this.getDecks();
-    const deck = decks.find(d => d.id === deckId);
-    if (!deck) return false;
-    deck.cards = deck.cards.filter(c => c.id !== cardId);
-    this.saveDecks(decks);
-    return true;
-  },
-
   resetDeckProgress(deckId) {
     const decks = this.getDecks();
     const deck = decks.find(d => d.id === deckId);

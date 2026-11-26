@@ -1234,5 +1234,1920 @@ export const STARTER_DECKS = [
         status: 'new'
       }
     ]
+  },
+  {
+    id: 'deck-level9-week2',
+    name: '📅 Level 9 Week 2 (Travel, Seasons & Intro Radicals)',
+    category: 'lesson',
+    description: 'Travel planning, seasons & holidays, everyday verbs/idioms, basic character roots, and first radicals with examples (口, 门, 扌, 王).',
+    icon: '📅',
+    cards: [
+      // Travel, Places & Planning
+      {
+        id: 'w2-1',
+        hanzi: '城市',
+        pinyin: 'chéng shì',
+        meaning: 'City / urban area',
+        notes: '城 (city wall) + 市 (market). Prompt: 城市 — 做什么 / 吃什么?',
+        status: 'new'
+      },
+      {
+        id: 'w2-2',
+        hanzi: '目的地',
+        pinyin: 'mù dì dì',
+        meaning: 'Destination',
+        notes: '目的 (goal/purpose) + 地 (place). Example: 墨尔本 → 上海/北京.',
+        status: 'new'
+      },
+      {
+        id: 'w2-3',
+        hanzi: '唯一',
+        pinyin: 'wéi yī',
+        meaning: 'Only / sole / unique',
+        notes: 'Used as 唯一 + noun (e.g. 唯一的选择 = the only choice). Notice 口 radical in 唯.',
+        status: 'new'
+      },
+      {
+        id: 'w2-4',
+        hanzi: '选择',
+        pinyin: 'xuǎn zé',
+        meaning: 'Option / choice / to choose',
+        notes: '选 uses 辶 (walk/movement radical) + 择 uses 扌 (hand radical).',
+        status: 'new'
+      },
+      {
+        id: 'w2-5',
+        hanzi: '古建筑',
+        pinyin: 'gǔ jiàn zhù',
+        meaning: 'Ancient architecture / historic buildings',
+        notes: '古 (ancient) + 建 (build) + 筑 (construct, ⺮ bamboo radical).',
+        status: 'new'
+      },
+      {
+        id: 'w2-6',
+        hanzi: '悠久',
+        pinyin: 'yōu jiǔ',
+        meaning: 'Long-standing / age-old (history, tradition)',
+        notes: 'Lesson sentence: 北京有很悠久、古老的历史。(Beijing has a very long, ancient history.)',
+        status: 'new'
+      },
+      {
+        id: 'w2-7',
+        hanzi: '古老',
+        pinyin: 'gǔ lǎo',
+        meaning: 'Ancient / age-old / traditional',
+        notes: '古 (ancient) + 老 (old). Often paired with 悠久 or 建筑.',
+        status: 'new'
+      },
+      {
+        id: 'w2-8',
+        hanzi: '纪念品',
+        pinyin: 'jì niàn pǐn',
+        meaning: 'Souvenir / keepsake',
+        notes: '纪念 (commemorate/remember) + 品 (item). 买纪念品 (buy souvenirs).',
+        status: 'new'
+      },
+      {
+        id: 'w2-9',
+        hanzi: '购物',
+        pinyin: 'gòu wù',
+        meaning: 'Shopping / to shop',
+        notes: '购 (buy, 贝 shell/money radical!) + 物 (thing). E.g. 双十一购物节.',
+        status: 'new'
+      },
+      {
+        id: 'w2-10',
+        hanzi: '名山大川',
+        pinyin: 'míng shān dà chuān',
+        meaning: 'Famous mountains and great rivers',
+        notes: 'Idiom for scenic landscapes across China (e.g. 长江, 黄河). 川 = river/stream.',
+        status: 'new'
+      },
+      {
+        id: 'w2-11',
+        hanzi: '长江',
+        pinyin: 'Cháng Jiāng',
+        meaning: 'Yangtze River',
+        notes: '长 (long) + 江 (large river, 氵 water radical).',
+        status: 'new'
+      },
+      {
+        id: 'w2-12',
+        hanzi: '黄河',
+        pinyin: 'Huáng Hé',
+        meaning: 'Yellow River',
+        notes: '黄 (yellow) + 河 (river, 氵 water radical).',
+        status: 'new'
+      },
+      {
+        id: 'w2-13',
+        hanzi: '外滩',
+        pinyin: 'Wài tān',
+        meaning: 'The Bund (waterfront in Shanghai)',
+        notes: '外 (outer) + 滩 (beach/shoal, 氵 water radical). Compare 上海 landmarks: 淮海路, 新天地.',
+        status: 'new'
+      },
+      {
+        id: 'w2-14',
+        hanzi: '亲戚',
+        pinyin: 'qīn qi',
+        meaning: 'Relatives / family relations',
+        notes: 'Note neutral tone on 戚 (qi).',
+        status: 'new'
+      },
+      // Seasons, Holidays & Activities
+      {
+        id: 'w2-15',
+        hanzi: '假期',
+        pinyin: 'jià qī',
+        meaning: 'Vacation / holiday period',
+        notes: '假 (亻 + 叚, holiday/leave) + 期 (period). Related: 假日 (holiday), 雪假 (snow holiday).',
+        status: 'new'
+      },
+      {
+        id: 'w2-16',
+        hanzi: '一致',
+        pinyin: 'yī zhì',
+        meaning: 'Consistent / identical / unanimous',
+        notes: '一样 → 一致 (more formal/written way to say the same/consistent).',
+        status: 'new'
+      },
+      {
+        id: 'w2-17',
+        hanzi: '年初',
+        pinyin: 'nián chū',
+        meaning: 'Beginning of the year',
+        notes: 'Contrast: 年初 (start of year) — 年中 (mid-year) — 年底 (end of year).',
+        status: 'new'
+      },
+      {
+        id: 'w2-18',
+        hanzi: '潮湿',
+        pinyin: 'cháo shī',
+        meaning: 'Humid / damp',
+        notes: 'Both characters have 氵 (water radical)! 湿 = wet.',
+        status: 'new'
+      },
+      {
+        id: 'w2-19',
+        hanzi: '淡季',
+        pinyin: 'dàn jì',
+        meaning: 'Off-season / low travel season',
+        notes: '淡 (氵 water radical: mild/quiet) + 季 (season). E.g. 四月份/九月份 不冷不热；淡季.',
+        status: 'new'
+      },
+      {
+        id: 'w2-20',
+        hanzi: '旺季',
+        pinyin: 'wàng jì',
+        meaning: 'Peak season / busy season',
+        notes: '旺 (日 sun + 王: prosperous/booming) + 季 (season). Contrast with 淡季.',
+        status: 'new'
+      },
+      {
+        id: 'w2-21',
+        hanzi: '季节',
+        pinyin: 'jì jié',
+        meaning: 'Season (of the year)',
+        notes: '春季 (spring) / 夏季 (summer) / 秋季 (autumn) / 冬季 (winter). Also 春天/夏天/秋天/冬天.',
+        status: 'new'
+      },
+      {
+        id: 'w2-22',
+        hanzi: '春节',
+        pinyin: 'Chūn jié',
+        meaning: 'Spring Festival / Chinese New Year',
+        notes: '春 (spring) + 节 (festival).',
+        status: 'new'
+      },
+      {
+        id: 'w2-23',
+        hanzi: '中秋节',
+        pinyin: 'Zhōng qiū jié',
+        meaning: 'Mid-Autumn Festival',
+        notes: '秋 (autumn) = 禾 (grain) + 火 (fire).',
+        status: 'new'
+      },
+      {
+        id: 'w2-24',
+        hanzi: '节日',
+        pinyin: 'jié rì',
+        meaning: 'Festival / holiday',
+        notes: 'E.g. 母亲节 (Mother\'s Day), 父亲节 (Father\'s Day), 双十一购物节.',
+        status: 'new'
+      },
+      {
+        id: 'w2-25',
+        hanzi: '妇女节',
+        pinyin: 'Fù nǚ jié',
+        meaning: 'International Women\'s Day',
+        notes: '妇 (女 woman radical) + 女 (woman) + 节 (festival).',
+        status: 'new'
+      },
+      {
+        id: 'w2-26',
+        hanzi: '滑雪',
+        pinyin: 'huá xuě',
+        meaning: 'Skiing / to ski',
+        notes: '滑 (氵 water radical: slide/slippery) + 雪 (snow). E.g. 新疆 / 吉林滑雪 (雪季).',
+        status: 'new'
+      },
+      {
+        id: 'w2-27',
+        hanzi: '攀岩',
+        pinyin: 'pān yán',
+        meaning: 'Rock climbing',
+        notes: '攀 (climb with hands/clasp) + 岩 (rock/cliff, 山 mountain radical). E.g. 维州攀岩季.',
+        status: 'new'
+      },
+      {
+        id: 'w2-28',
+        hanzi: '爬山',
+        pinyin: 'pá shān',
+        meaning: 'Mountain climbing / hiking',
+        notes: '爬 (claw/climb) + 山 (mountain).',
+        status: 'new'
+      },
+      {
+        id: 'w2-29',
+        hanzi: '爱好',
+        pinyin: 'ài hào',
+        meaning: 'Hobby / interest',
+        notes: 'Note 4th tone hào here! 好 has 女 (woman) + 子 (child).',
+        status: 'new'
+      },
+      // Spoken Verbs, Phrases & Idioms
+      {
+        id: 'w2-30',
+        hanzi: '融化',
+        pinyin: 'róng huà',
+        meaning: 'To melt / thaw (ice, snow)',
+        notes: 'Compare with 融入 (blend in / integrate into a group).',
+        status: 'new'
+      },
+      {
+        id: 'w2-31',
+        hanzi: '融入',
+        pinyin: 'róng rù',
+        meaning: 'Blend in / integrate into',
+        notes: '融 (blend/melt) + 入 (enter). E.g. 融入了 (blended right in).',
+        status: 'new'
+      },
+      {
+        id: 'w2-32',
+        hanzi: '主动',
+        pinyin: 'zhǔ dòng',
+        meaning: 'Proactive / on one\'s own initiative',
+        notes: 'Example: 主动学习中文 (proactively study Chinese).',
+        status: 'new'
+      },
+      {
+        id: 'w2-33',
+        hanzi: '改进',
+        pinyin: 'gǎi jìn',
+        meaning: 'Improve / make better',
+        notes: '改 (change/correct) + 进 (advance, 辶 walk radical).',
+        status: 'new'
+      },
+      {
+        id: 'w2-34',
+        hanzi: '进攻',
+        pinyin: 'jìn gōng',
+        meaning: 'Attack / advance / open fire',
+        notes: '进 (advance) + 攻 (attack). Lesson note: 进攻 / 开火.',
+        status: 'new'
+      },
+      {
+        id: 'w2-35',
+        hanzi: '一知半解',
+        pinyin: 'yì zhī bàn jiě',
+        meaning: 'Half-baked knowledge / superficial understanding',
+        notes: 'Idiom: know one part (一知), half-understand (半解).',
+        status: 'new'
+      },
+      {
+        id: 'w2-36',
+        hanzi: '你们俩',
+        pinyin: 'nǐ men liǎ',
+        meaning: 'You two',
+        notes: '俩 = 两个 (亻 person radical + 两 two). Also 我们俩 (the two of us).',
+        status: 'new'
+      },
+      {
+        id: 'w2-37',
+        hanzi: '出去玩',
+        pinyin: 'chū qù wán',
+        meaning: 'Go out and hang out / have fun',
+        notes: '玩 uses 王字旁 (jade radical). Compare: 去哪里玩?',
+        status: 'new'
+      },
+      {
+        id: 'w2-38',
+        hanzi: '打车',
+        pinyin: 'dǎ chē',
+        meaning: 'Take a taxi / hail a ride',
+        notes: '打 (扌 hand radical). Also 打的 (take a cab) / 打滴滴 (take a Didi).',
+        status: 'new'
+      },
+      {
+        id: 'w2-39',
+        hanzi: '明白',
+        pinyin: 'míng bai',
+        meaning: 'Understand / clear',
+        notes: '明 (日 sun + 月 moon = bright) + 白 (white/clear). Lesson line: 我现在懂了/明白了.',
+        status: 'new'
+      },
+      // Ultra-Basic Characters & Components in Week 2
+      {
+        id: 'w2-40',
+        hanzi: '季',
+        pinyin: 'jì',
+        meaning: 'Season',
+        notes: 'Component formula: 禾 (grain) + 子 (child) = 季.',
+        status: 'new'
+      },
+      {
+        id: 'w2-41',
+        hanzi: '禾',
+        pinyin: 'hé',
+        meaning: 'Standing grain / cereal crop',
+        notes: 'Building block in 季 (禾 + 子) and 秋 (禾 + 火).',
+        status: 'new'
+      },
+      {
+        id: 'w2-42',
+        hanzi: '子',
+        pinyin: 'zǐ',
+        meaning: 'Child / son / seed',
+        notes: 'Examples: 孩子 (child), 儿子 (son), 老大/老二 (oldest/second child). Also bottom of 季.',
+        status: 'new'
+      },
+      {
+        id: 'w2-43',
+        hanzi: '进',
+        pinyin: 'jìn',
+        meaning: 'Enter / come in / advance',
+        notes: 'Uses 辶 (走之底 walk radical). Examples: 进来, 请进, 改进, 进攻.',
+        status: 'new'
+      },
+      {
+        id: 'w2-44',
+        hanzi: '石',
+        pinyin: 'shí',
+        meaning: 'Stone / rock',
+        notes: 'Basic character root (cliff 厂 + stone 口 shape).',
+        status: 'new'
+      },
+      {
+        id: 'w2-45',
+        hanzi: '山',
+        pinyin: 'shān',
+        meaning: 'Mountain / hill',
+        notes: 'Pictograph of three mountain peaks. Used in 爬山, 攀岩, 山东.',
+        status: 'new'
+      },
+      {
+        id: 'w2-46',
+        hanzi: '白',
+        pinyin: 'bái',
+        meaning: 'White / clear / plain',
+        notes: 'Basic character used in 明白 (understand) and 白菜 (napa cabbage).',
+        status: 'new'
+      },
+      {
+        id: 'w2-47',
+        hanzi: '万',
+        pinyin: 'wàn',
+        meaning: 'Ten thousand (10,000)',
+        notes: 'Basic number character (looks like 方 without top dot).',
+        status: 'new'
+      },
+      {
+        id: 'w2-48',
+        hanzi: '左',
+        pinyin: 'zuǒ',
+        meaning: 'Left (side)',
+        notes: 'Top hand + 工 (work) below. Pair with 右 (right, has 口).',
+        status: 'new'
+      },
+      {
+        id: 'w2-49',
+        hanzi: '右',
+        pinyin: 'yòu',
+        meaning: 'Right (side)',
+        notes: 'Top hand + 口 (mouth) below. Pair with 左 (left, has 工).',
+        status: 'new'
+      },
+      {
+        id: 'w2-50',
+        hanzi: '工',
+        pinyin: 'gōng',
+        meaning: 'Work / labor / craft',
+        notes: 'Basic character inside 左 (left) and 工作 (work).',
+        status: 'new'
+      },
+      {
+        id: 'w2-51',
+        hanzi: '有',
+        pinyin: 'yǒu',
+        meaning: 'Have / possess / there is',
+        notes: 'Basic character (hand + 月). Opposite: 没有.',
+        status: 'new'
+      },
+      // Radicals with Examples in Week 2
+      {
+        id: 'w2-52',
+        hanzi: '口',
+        pinyin: 'kǒu',
+        meaning: 'Mouth / Mouth radical (口字旁)',
+        notes: 'Radical clue: characters with 口 relate to mouth, eating, drinking, or speaking (吃, 喝, 问).',
+        status: 'new'
+      },
+      {
+        id: 'w2-53',
+        hanzi: '吃',
+        pinyin: 'chī',
+        meaning: 'Eat',
+        notes: '口字旁 (mouth radical) + 乞.',
+        status: 'new'
+      },
+      {
+        id: 'w2-54',
+        hanzi: '喝',
+        pinyin: 'hē',
+        meaning: 'Drink',
+        notes: '口字旁 (mouth radical) + 曷.',
+        status: 'new'
+      },
+      {
+        id: 'w2-55',
+        hanzi: '门',
+        pinyin: 'mén',
+        meaning: 'Door / Gate radical (门字框)',
+        notes: 'Frame radical enclosing actions/states at a door: 闯 (rush), 问 (ask), 闪 (flash).',
+        status: 'new'
+      },
+      {
+        id: 'w2-56',
+        hanzi: '闯',
+        pinyin: 'chuǎng',
+        meaning: 'Rush / dash / charge in',
+        notes: '门 (door) + 马 (horse) = horse charging through a gate!',
+        status: 'new'
+      },
+      {
+        id: 'w2-57',
+        hanzi: '问',
+        pinyin: 'wèn',
+        meaning: 'Ask / inquire',
+        notes: '门 (door) + 口 (mouth) = speaking at the door to ask.',
+        status: 'new'
+      },
+      {
+        id: 'w2-58',
+        hanzi: '闪',
+        pinyin: 'shǎn',
+        meaning: 'Flash / dodge / duck aside',
+        notes: '门 (door) + 人 (person) = person darting through a doorway.',
+        status: 'new'
+      },
+      {
+        id: 'w2-59',
+        hanzi: '打',
+        pinyin: 'dǎ',
+        meaning: 'Hit / play / hail (a ride) / make (a call)',
+        notes: '提手旁 (扌 hand radical — see Week 5 for the full 扌 family!) + 丁. Used in 打车, 打麻将, 打电话.',
+        status: 'new'
+      },
+      {
+        id: 'w2-60',
+        hanzi: '接',
+        pinyin: 'jiē',
+        meaning: 'Receive / catch / pick up / accept',
+        notes: '提手旁 (扌 hand radical) + 妾. Used in 接受 (accept) and 接人 (pick someone up).',
+        status: 'new'
+      },
+      {
+        id: 'w2-62',
+        hanzi: '王',
+        pinyin: 'wáng',
+        meaning: 'King / Jade radical (王字旁)',
+        notes: 'As a left-side radical (王字旁), it actually comes from 玉 (jade) — e.g. 玩, 珍珠, 球, 班.',
+        status: 'new'
+      },
+      {
+        id: 'w2-63',
+        hanzi: '玩',
+        pinyin: 'wán',
+        meaning: 'Play / hang out / have fun',
+        notes: '王字旁 (jade) + 元. Examples: 玩麻将, 玩手机, 玩TikTok, 出去玩.',
+        status: 'new'
+      },
+      {
+        id: 'w2-64',
+        hanzi: '它',
+        pinyin: 'tā',
+        meaning: 'It (things, animals)',
+        notes: '宝盖头 (宀 roof radical) + 匕. Plural: 它们 (they/them for objects/animals).',
+        status: 'new'
+      },
+      {
+        id: 'w2-65',
+        hanzi: '他',
+        pinyin: 'tā',
+        meaning: 'He / him',
+        notes: '单人旁 (亻 person radical) + 也. Plural: 他们 (they/them).',
+        status: 'new'
+      },
+      {
+        id: 'w2-66',
+        hanzi: '她',
+        pinyin: 'tā',
+        meaning: 'She / her',
+        notes: '女字旁 (woman radical) + 也. Compare 他 (亻) vs 她 (女) vs 它 (宀).',
+        status: 'new'
+      },
+      {
+        id: 'w2-67',
+        hanzi: '好',
+        pinyin: 'hǎo',
+        meaning: 'Good / well',
+        notes: '女 (woman) + 子 (child) = good!',
+        status: 'new'
+      },
+      {
+        id: 'w2-68',
+        hanzi: '妇',
+        pinyin: 'fù',
+        meaning: 'Woman / married woman',
+        notes: '女字旁 (woman radical) + 彐. Seen in 妇女节 (Women\'s Day).',
+        status: 'new'
+      },
+      {
+        id: 'w2-69',
+        hanzi: '妈',
+        pinyin: 'mā',
+        meaning: 'Mom / mother',
+        notes: '女字旁 (meaning: female) + 马 (sound: mā).',
+        status: 'new'
+      },
+      {
+        id: 'w2-70',
+        hanzi: '姨',
+        pinyin: 'yí',
+        meaning: 'Aunt (maternal aunt)',
+        notes: '女字旁 (meaning: female) + 夷 (sound: yí).',
+        status: 'new'
+      },
+      {
+        id: 'w2-71',
+        hanzi: '姑娘',
+        pinyin: 'gū niang',
+        meaning: 'Young woman / girl',
+        notes: 'Both characters use 女字旁 (女)! Compare 女孩子.',
+        status: 'new'
+      },
+      {
+        id: 'w2-72',
+        hanzi: '底',
+        pinyin: 'dǐ',
+        meaning: 'Bottom / base / end',
+        notes: 'Note: 走之底 is the name of radical 辶 (meaning "bottom-walking"), whereas 底 itself uses 广 (shelter) + 氐.',
+        status: 'new'
+      }
+    ]
+  },
+  {
+    id: 'deck-level9-week3',
+    name: '🌿 Level 9 Week 3 (Work, Life, Radicals & Pictographs)',
+    category: 'lesson',
+    description: 'Work & WFH, socializing & mahjong, Australian life & diet, radical families (艹, 木, 氵, ⺮, 玉, 金), and oracle-bone pictographs.',
+    icon: '🌿',
+    cards: [
+      // Work, WFH & Socializing
+      {
+        id: 'w3-1',
+        hanzi: '加班',
+        pinyin: 'jiā bān',
+        meaning: 'Work overtime',
+        notes: '加班费 (overtime pay). Example: 加班很少 / 偶尔会.',
+        status: 'new'
+      },
+      {
+        id: 'w3-2',
+        hanzi: '弹性上下班',
+        pinyin: 'tán xìng shàng xià bān',
+        meaning: 'Flexible working hours',
+        notes: 'Synonym: 灵活地上下班. 弹性 = elastic/flexible.',
+        status: 'new'
+      },
+      {
+        id: 'w3-3',
+        hanzi: '在家办公',
+        pinyin: 'zài jiā bàn gōng',
+        meaning: 'Work from home (WFH)',
+        notes: 'Contrast: 在家办公 (remote office work) vs 在家工作. Also 八小时工作制 (8-hour workday).',
+        status: 'new'
+      },
+      {
+        id: 'w3-4',
+        hanzi: '上网课',
+        pinyin: 'shàng wǎng kè',
+        meaning: 'Take online classes',
+        notes: '上 (attend) + 网 (internet) + 课 (class). Compare 线上办公 (working online).',
+        status: 'new'
+      },
+      {
+        id: 'w3-5',
+        hanzi: '上班',
+        pinyin: 'shàng bān',
+        meaning: 'Go to work / start a shift',
+        notes: 'Opposite: 下班 (get off work). 班 uses two 王 (jade) + 刂.',
+        status: 'new'
+      },
+      {
+        id: 'w3-6',
+        hanzi: '社交',
+        pinyin: 'shè jiāo',
+        meaning: 'Socializing / social interaction',
+        notes: 'Short for 社会交往. Lesson line: 我感觉缺少社交，我需要更多的社交.',
+        status: 'new'
+      },
+      {
+        id: 'w3-7',
+        hanzi: '社媒',
+        pinyin: 'shè méi',
+        meaning: 'Social media',
+        notes: 'Short for 社交媒体. 媒 has 女字旁 (matchmaker/medium).',
+        status: 'new'
+      },
+      {
+        id: 'w3-8',
+        hanzi: '交通',
+        pinyin: 'jiāo tōng',
+        meaning: 'Transport / traffic',
+        notes: '交 (intersect/connect) + 通 (pass through, 辶 walk radical).',
+        status: 'new'
+      },
+      {
+        id: 'w3-9',
+        hanzi: '意外',
+        pinyin: 'yì wài',
+        meaning: 'Unexpected / surprise / accident',
+        notes: '意 (thought/expectation) + 外 (outside) = outside expectation.',
+        status: 'new'
+      },
+      {
+        id: 'w3-10',
+        hanzi: '参与感',
+        pinyin: 'cān yǔ gǎn',
+        meaning: 'Sense of participation / involvement',
+        notes: '参与 (participate) + 感 (feeling, 心 heart radical).',
+        status: 'new'
+      },
+      {
+        id: 'w3-11',
+        hanzi: '真实',
+        pinyin: 'zhēn shí',
+        meaning: 'Real / authentic / true',
+        notes: 'Example: 在真实生活中 (in real life). Contrast 在工作中 / 在生活中.',
+        status: 'new'
+      },
+      {
+        id: 'w3-12',
+        hanzi: '社群',
+        pinyin: 'shè qún',
+        meaning: 'Community / social group',
+        notes: 'Example: 亚洲年轻人社群 (young Asian community). Compare 在群里 (in the group chat).',
+        status: 'new'
+      },
+      {
+        id: 'w3-13',
+        hanzi: '移民',
+        pinyin: 'yí mín',
+        meaning: 'Immigrant / immigrate',
+        notes: '移 (禾 grain + 多) + 民 (people). Lesson phrase: 在新一代移民人群里.',
+        status: 'new'
+      },
+      {
+        id: 'w3-14',
+        hanzi: '麻将',
+        pinyin: 'má jiàng',
+        meaning: 'Mahjong',
+        notes: '打麻将挺/蛮流行的 (playing mahjong is quite popular). 麻将馆 (mahjong parlor).',
+        status: 'new'
+      },
+      {
+        id: 'w3-15',
+        hanzi: '手感',
+        pinyin: 'shǒu gǎn',
+        meaning: 'Feel / touch in the hand (form/rhythm)',
+        notes: 'Lesson line: "我今天打麻将手感不好/很好". Compare 感觉 (feeling).',
+        status: 'new'
+      },
+      {
+        id: 'w3-16',
+        hanzi: '印象深刻',
+        pinyin: 'yìn xiàng shēn kè',
+        meaning: 'Deeply impressed / leave a lasting impression',
+        notes: '让我特别有感觉 (made a strong impression on me). 深 uses 氵 water radical.',
+        status: 'new'
+      },
+      {
+        id: 'w3-17',
+        hanzi: '老少皆宜',
+        pinyin: 'lǎo shào jiē yí',
+        meaning: 'Suitable for both young and old',
+        notes: 'Note 4th tone shào (young). 皆 = all; 宜 = suitable (宀 roof radical).',
+        status: 'new'
+      },
+      {
+        id: 'w3-18',
+        hanzi: '计算',
+        pinyin: 'jì suàn',
+        meaning: 'Calculate / count',
+        notes: '算 uses ⺮ (bamboo radical, from counting rods!). E.g. 算你的牌/别人的牌. Contrast: 算计.',
+        status: 'new'
+      },
+      {
+        id: 'w3-19',
+        hanzi: '算计',
+        pinyin: 'suàn ji',
+        meaning: 'Scheme / plot / calculate selfishly',
+        notes: 'Same two characters as 计算 reversed, with neutral tone ji and a negative nuance!',
+        status: 'new'
+      },
+      // Daily Life, Nature, Diet & Language Meta
+      {
+        id: 'w3-20',
+        hanzi: '引火',
+        pinyin: 'yǐn huǒ',
+        meaning: 'Kindle / start a fire',
+        notes: '引 (lead/draw) + 火 (fire). Compare 点火 (light a fire).',
+        status: 'new'
+      },
+      {
+        id: 'w3-21',
+        hanzi: '柴火',
+        pinyin: 'chái huo',
+        meaning: 'Firewood / kindling',
+        notes: '柴 has 木 (wood radical) at bottom! Synonym: 木柴.',
+        status: 'new'
+      },
+      {
+        id: 'w3-22',
+        hanzi: '允许',
+        pinyin: 'yǔn xǔ',
+        meaning: 'Allow / permit',
+        notes: 'Lesson sentence: "你得到 council 的允许了吗？"',
+        status: 'new'
+      },
+      {
+        id: 'w3-23',
+        hanzi: '小区',
+        pinyin: 'xiǎo qū',
+        meaning: 'Residential compound / neighborhood',
+        notes: 'Urban gated residential area; contrast with 村 (village).',
+        status: 'new'
+      },
+      {
+        id: 'w3-24',
+        hanzi: '村',
+        pinyin: 'cūn',
+        meaning: 'Village / countryside',
+        notes: '木 (wood/tree radical) + 寸. Examples: 我住在村里; 大农村 (joking term for quiet suburbs/Australia).',
+        status: 'new'
+      },
+      {
+        id: 'w3-25',
+        hanzi: '类似',
+        pinyin: 'lèi sì',
+        meaning: 'Similar to / analogous',
+        notes: '似 uses 亻 (person radical).',
+        status: 'new'
+      },
+      {
+        id: 'w3-26',
+        hanzi: '上火',
+        pinyin: 'shàng huǒ',
+        meaning: 'Internal "heat" / inflammation (TCM concept)',
+        notes: 'Cantonese/southern equivalent: 热气.',
+        status: 'new'
+      },
+      {
+        id: 'w3-27',
+        hanzi: '忌口',
+        pinyin: 'jì kǒu',
+        meaning: 'Dietary restrictions / foods to avoid',
+        notes: '忌 (己 + 心 heart: avoid/taboo, as in 禁忌) + 口 (mouth). "你有什么忌口？" "我都吃，我没什么忌口."',
+        status: 'new'
+      },
+      {
+        id: 'w3-28',
+        hanzi: '花粉过敏',
+        pinyin: 'huā fěn guò mǐn',
+        meaning: 'Hay fever / pollen allergy',
+        notes: '花 (艹 grass) + 粉 (powder) + 过 (辶) + 敏 (sensitive).',
+        status: 'new'
+      },
+      {
+        id: 'w3-29',
+        hanzi: '碰到',
+        pinyin: 'pèng dào',
+        meaning: 'Run into / bump into / encounter',
+        notes: '碰 (石 stone radical) + 到. Lesson line: "我没碰到过/遇见过."',
+        status: 'new'
+      },
+      {
+        id: 'w3-30',
+        hanzi: '规律',
+        pinyin: 'guī lǜ',
+        meaning: 'Rules / pattern / regularity',
+        notes: 'Useful for character radical patterns (汉字规律)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-31',
+        hanzi: '属于',
+        pinyin: 'shǔ yú',
+        meaning: 'Belong to / be part of',
+        notes: '属 + 于. Used to classify which radical group a character belongs to.',
+        status: 'new'
+      },
+      {
+        id: 'w3-32',
+        hanzi: '繁体字',
+        pinyin: 'fán tǐ zì',
+        meaning: 'Traditional Chinese characters',
+        notes: '繁 (complex) + 体 (body/form, 亻 person radical) + 字 (character, 宀 roof).',
+        status: 'new'
+      },
+      {
+        id: 'w3-33',
+        hanzi: '简体字',
+        pinyin: 'jiǎn tǐ zì',
+        meaning: 'Simplified Chinese characters',
+        notes: '简 = 竹字头 (⺮ bamboo) + 间 (space/door).',
+        status: 'new'
+      },
+      {
+        id: 'w3-34',
+        hanzi: '房间',
+        pinyin: 'fáng jiān',
+        meaning: 'Room',
+        notes: '房 (户 door + 方) + 间 (门 door + 日 sun). Compare 间 inside 简!',
+        status: 'new'
+      },
+      // Radicals & Associated Words with Examples in Week 3
+      {
+        id: 'w3-35',
+        hanzi: '艹',
+        speak: '草字头',
+        pinyin: 'cǎo zì tóu',
+        meaning: 'Grass / Plant radical (草字头)',
+        notes: 'Top radical for flowers, grass, tea, vegetables, and berries/fruits (花, 草, 茶, 菜, 莓).',
+        status: 'new'
+      },
+      {
+        id: 'w3-36',
+        hanzi: '花',
+        pinyin: 'huā',
+        meaning: 'Flower / blossom',
+        notes: '艹 (grass radical) + 化.',
+        status: 'new'
+      },
+      {
+        id: 'w3-37',
+        hanzi: '草',
+        pinyin: 'cǎo',
+        meaning: 'Grass / straw / herb',
+        notes: '艹 (grass radical) + 早.',
+        status: 'new'
+      },
+      {
+        id: 'w3-38',
+        hanzi: '草莓',
+        pinyin: 'cǎo méi',
+        meaning: 'Strawberry',
+        notes: 'Both have 艹! 莓 = 艹 + 每 (every).',
+        status: 'new'
+      },
+      {
+        id: 'w3-39',
+        hanzi: '黑莓',
+        pinyin: 'hēi méi',
+        meaning: 'Blackberry',
+        notes: '黑 (black) + 莓 (berry, 艹 + 每).',
+        status: 'new'
+      },
+      {
+        id: 'w3-40',
+        hanzi: '蓝莓',
+        pinyin: 'lán méi',
+        meaning: 'Blueberry',
+        notes: 'Both have 艹! 蓝 (blue, originally indigo plant) + 莓 (berry).',
+        status: 'new'
+      },
+      {
+        id: 'w3-41',
+        hanzi: '每',
+        pinyin: 'měi',
+        meaning: 'Every / each',
+        notes: 'Phonetic/root inside 莓 (艹 + 每 = berry) and 海 (氵 + 每 = sea).',
+        status: 'new'
+      },
+      {
+        id: 'w3-42',
+        hanzi: '茶',
+        pinyin: 'chá',
+        meaning: 'Tea',
+        notes: '艹 (grass) + 人 + 木 (tree). Examples: 红茶 (black tea), 绿茶 (green tea).',
+        status: 'new'
+      },
+      {
+        id: 'w3-43',
+        hanzi: '茉莉',
+        pinyin: 'mò lì',
+        meaning: 'Jasmine',
+        notes: 'Both have 艹! 莉 = 艹 + 利 (lì, sharp).',
+        status: 'new'
+      },
+      {
+        id: 'w3-44',
+        hanzi: '蔬菜',
+        pinyin: 'shū cài',
+        meaning: 'Vegetables',
+        notes: 'Both have 艹 (grass/plant radical)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-45',
+        hanzi: '白菜',
+        pinyin: 'bái cài',
+        meaning: 'Napa cabbage / Chinese white cabbage',
+        notes: '白 (white) + 菜 (vegetable, 艹 radical).',
+        status: 'new'
+      },
+      {
+        id: 'w3-46',
+        hanzi: '菠菜',
+        pinyin: 'bō cài',
+        meaning: 'Spinach',
+        notes: '菠 = 艹 (grass) + 波 (bō wave)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-47',
+        hanzi: '空心菜',
+        pinyin: 'kōng xīn cài',
+        meaning: 'Water spinach (morning glory)',
+        notes: 'Literally "hollow-heart vegetable".',
+        status: 'new'
+      },
+      {
+        id: 'w3-48',
+        hanzi: '卷心菜',
+        pinyin: 'juǎn xīn cài',
+        meaning: 'Cabbage (round green cabbage)',
+        notes: 'Also called 包菜 (as in 手撕包菜). Literally "rolled-heart vegetable".',
+        status: 'new'
+      },
+      {
+        id: 'w3-49',
+        hanzi: '韭菜',
+        pinyin: 'jiǔ cài',
+        meaning: 'Garlic chives',
+        notes: '韭 is a pictograph of chives growing from the ground!',
+        status: 'new'
+      },
+      {
+        id: 'w3-50',
+        hanzi: '葱',
+        pinyin: 'cōng',
+        meaning: 'Scallion / green onion / leek',
+        notes: '艹 (grass radical) + 匆.',
+        status: 'new'
+      },
+      {
+        id: 'w3-51',
+        hanzi: '洋葱',
+        pinyin: 'yáng cōng',
+        meaning: 'Onion (bulb onion)',
+        notes: '洋 (氵 water + 羊: foreign/overseas) + 葱 (scallion, 艹).',
+        status: 'new'
+      },
+      {
+        id: 'w3-52',
+        hanzi: '蒜',
+        pinyin: 'suàn',
+        meaning: 'Garlic',
+        notes: '艹 (grass radical) + 示示.',
+        status: 'new'
+      },
+      {
+        id: 'w3-53',
+        hanzi: '姜',
+        pinyin: 'jiāng',
+        meaning: 'Ginger',
+        notes: '羊 + 女 (contains 女 at bottom).',
+        status: 'new'
+      },
+      {
+        id: 'w3-54',
+        hanzi: '苦瓜',
+        pinyin: 'kǔ guā',
+        meaning: 'Bitter melon / bitter gourd',
+        notes: '苦 (艹 grass + 古 ancient = bitter) + 瓜 (melon).',
+        status: 'new'
+      },
+      {
+        id: 'w3-55',
+        hanzi: '葡萄',
+        pinyin: 'pú tao',
+        meaning: 'Grapes 🍇',
+        notes: 'Both characters have 艹 (grass/plant radical)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-56',
+        hanzi: '苹果',
+        pinyin: 'píng guǒ',
+        meaning: 'Apple',
+        notes: '苹 = 艹 (grass) + 平 (píng, flat)! Compare 半 (half).',
+        status: 'new'
+      },
+      {
+        id: 'w3-57',
+        hanzi: '奇异果',
+        pinyin: 'qí yì guǒ',
+        meaning: 'Kiwi fruit 🥝',
+        notes: 'Also called 猕猴桃 (mí hóu táo). Note 桃子 (peach 🍑) has 木 tree radical.',
+        status: 'new'
+      },
+      {
+        id: 'w3-58',
+        hanzi: '桃子',
+        pinyin: 'táo zi',
+        meaning: 'Peach 🍑',
+        notes: '桃 = 木 (tree radical) + 兆.',
+        status: 'new'
+      },
+      {
+        id: 'w3-59',
+        hanzi: '木',
+        pinyin: 'mù',
+        meaning: 'Wood / Tree radical (木字旁)',
+        notes: 'Pictograph of a tree. Appears on trees and wooden objects: 桉树, 枇杷, 桃, 柴, 村.',
+        status: 'new'
+      },
+      {
+        id: 'w3-60',
+        hanzi: '桉树',
+        pinyin: 'ān shù',
+        meaning: 'Eucalyptus tree',
+        notes: 'Both characters have 木 (wood/tree radical)! 桉 = 木 + 安.',
+        status: 'new'
+      },
+      {
+        id: 'w3-61',
+        hanzi: '枇杷',
+        pinyin: 'pí pa',
+        meaning: 'Loquat (fruit/tree)',
+        notes: 'Both have 木 (tree radical) + phonetic halves 比 (bǐ) and 巴 (bā): 枇杷树.',
+        status: 'new'
+      },
+      {
+        id: 'w3-62',
+        hanzi: '氵',
+        speak: '三点水',
+        pinyin: 'sān diǎn shuǐ',
+        meaning: 'Three-drops water radical (三点水)',
+        notes: 'Derived from 水 (water). Appears on liquid, river, and wet words: 波, 潮湿, 长江, 河.',
+        status: 'new'
+      },
+      {
+        id: 'w3-63',
+        hanzi: '波',
+        pinyin: 'bō',
+        meaning: 'Wave / ripple',
+        notes: 'Radical formula: 三点水 (氵 water) + 皮 (pí) = 波! Used in 菠菜.',
+        status: 'new'
+      },
+      {
+        id: 'w3-64',
+        hanzi: '⺮',
+        speak: '竹字头',
+        pinyin: 'zhú zì tóu',
+        meaning: 'Bamboo radical (竹字头)',
+        notes: 'Derived from 竹 (bamboo). Appears in 简 (简体字), 算 (计算), 筷子, 篮.',
+        status: 'new'
+      },
+      {
+        id: 'w3-65',
+        hanzi: '玉',
+        pinyin: 'yù',
+        meaning: 'Jade',
+        notes: '王 + dot = 玉! Explains why 王字旁 (玩, 珍珠, 球, 班) relates to jade & fine objects.',
+        status: 'new'
+      },
+      {
+        id: 'w3-66',
+        hanzi: '珍珠',
+        pinyin: 'zhēn zhū',
+        meaning: 'Pearl',
+        notes: 'Both have 王字旁 (jade radical)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-67',
+        hanzi: '球',
+        pinyin: 'qiú',
+        meaning: 'Ball / sphere / globe',
+        notes: '王字旁 (jade) + 求 (qiú).',
+        status: 'new'
+      },
+      {
+        id: 'w3-68',
+        hanzi: '班',
+        pinyin: 'bān',
+        meaning: 'Class / shift / team',
+        notes: 'Two 王 (jade) characters separated by a 刂 knife! Seen in 上班/下班, 加班.',
+        status: 'new'
+      },
+      {
+        id: 'w3-69',
+        hanzi: '金',
+        pinyin: 'jīn',
+        meaning: 'Gold / metal (root of 金字旁 钅)',
+        notes: 'As a left radical 金 becomes 钅 (金字旁) for metals, tools, and money (钱, 铁, 银).',
+        status: 'new'
+      },
+      {
+        id: 'w3-70',
+        hanzi: '半',
+        pinyin: 'bàn',
+        meaning: 'Half',
+        notes: 'Basic character (compare 平 flat in 苹果, and 一知半解).',
+        status: 'new'
+      },
+      {
+        id: 'w3-71',
+        hanzi: '土豆',
+        pinyin: 'tǔ dòu',
+        meaning: 'Potato',
+        notes: '土 (earth/soil) + 豆 (bean). Literally "earth bean".',
+        status: 'new'
+      },
+      {
+        id: 'w3-72',
+        hanzi: '雨',
+        pinyin: 'yǔ',
+        meaning: 'Rain',
+        notes: 'Pictograph of raindrops falling under sky/cloud! Root of 雪 (snow).',
+        status: 'new'
+      },
+      // 32-Pictograph Chart Roots (non-duplicate basic characters from Lesson3_image1.png)
+      {
+        id: 'w3-73',
+        hanzi: '人',
+        pinyin: 'rén',
+        meaning: 'Person / human',
+        notes: 'Pictograph: person walking in side profile. Becomes 亻 (单人旁) on the left of characters.',
+        status: 'new'
+      },
+      {
+        id: 'w3-74',
+        hanzi: '男',
+        pinyin: 'nán',
+        meaning: 'Man / male',
+        notes: '田 (field) + 力 (strength) = working with strength in the fields.',
+        status: 'new'
+      },
+      {
+        id: 'w3-75',
+        hanzi: '夫',
+        pinyin: 'fū',
+        meaning: 'Husband / man',
+        notes: '大 (big person) + top horizontal stroke (hairpin of an adult man).',
+        status: 'new'
+      },
+      {
+        id: 'w3-76',
+        hanzi: '妻',
+        pinyin: 'qī',
+        meaning: 'Wife',
+        notes: 'Contains 女 (woman) at the bottom.',
+        status: 'new'
+      },
+      {
+        id: 'w3-77',
+        hanzi: '目',
+        pinyin: 'mù',
+        meaning: 'Eye (root of 目字旁)',
+        notes: 'Pictograph of an eye turned upright. Appears in 睡 (sleep), 眼 (eye), 看 (hand over eye).',
+        status: 'new'
+      },
+      {
+        id: 'w3-78',
+        hanzi: '耳',
+        pinyin: 'ěr',
+        meaning: 'Ear (root of 耳字旁)',
+        notes: 'Pictograph of an ear. Appears in 闻 (hear/smell), 职 (job), 聊 (chat).',
+        status: 'new'
+      },
+      {
+        id: 'w3-79',
+        hanzi: '心',
+        pinyin: 'xīn',
+        meaning: 'Heart / mind (becomes 忄 on left)',
+        notes: 'Pictograph of a heart. Appears at bottom (感, 想, 忌) or on left as 忄 (快, 慢, 懂).',
+        status: 'new'
+      },
+      {
+        id: 'w3-80',
+        hanzi: '日',
+        pinyin: 'rì',
+        meaning: 'Sun / day (root of 日字旁)',
+        notes: 'Pictograph of the sun. Appears in 明 (sun + moon), 时 (time), 早 (morning), 旺.',
+        status: 'new'
+      },
+      {
+        id: 'w3-81',
+        hanzi: '月',
+        pinyin: 'yuè',
+        meaning: 'Moon / month (also 肉月旁 flesh)',
+        notes: 'Pictograph of a crescent moon. Note: on left of body/meat words (肚, 肥, 腿, 脑) 月 represents 肉 (meat/flesh)!',
+        status: 'new'
+      },
+      {
+        id: 'w3-82',
+        hanzi: '田',
+        pinyin: 'tián',
+        meaning: 'Field / farmland',
+        notes: 'Pictograph of divided farm plots. Appears in 男 (man), 留 (stay), 界 (boundary).',
+        status: 'new'
+      },
+      {
+        id: 'w3-83',
+        hanzi: '土',
+        pinyin: 'tǔ',
+        meaning: 'Earth / soil / ground (root of 提土旁)',
+        notes: 'Pictograph of a mound of soil on the ground. Appears in 地, 城, 块, 场.',
+        status: 'new'
+      },
+      {
+        id: 'w3-84',
+        hanzi: '水',
+        pinyin: 'shuǐ',
+        meaning: 'Water (becomes 氵 on left)',
+        notes: 'Pictograph of flowing water. Shrinks to 氵 (三点水) on the left of characters.',
+        status: 'new'
+      },
+      {
+        id: 'w3-85',
+        hanzi: '火',
+        pinyin: 'huǒ',
+        meaning: 'Fire (also 灬 at bottom)',
+        notes: 'Pictograph of rising flames. Appears on left (炒, 烤, 烧) or at bottom as 灬 (热, 煮, 煎).',
+        status: 'new'
+      },
+      {
+        id: 'w3-86',
+        hanzi: '贝',
+        pinyin: 'bèi',
+        meaning: 'Cowrie shell / money radical (贝字旁)',
+        notes: 'Shells were ancient currency! Appears in wealth/buying words: 购 (shop), 费 (fee), 贵 (expensive), 货 (goods).',
+        status: 'new'
+      },
+      {
+        id: 'w3-87',
+        hanzi: '大',
+        pinyin: 'dà',
+        meaning: 'Big / large',
+        notes: 'Pictograph of a person stretching arms out wide.',
+        status: 'new'
+      },
+      {
+        id: 'w3-88',
+        hanzi: '小',
+        pinyin: 'xiǎo',
+        meaning: 'Small / little',
+        notes: 'Pictograph of three tiny dots/grains.',
+        status: 'new'
+      },
+      {
+        id: 'w3-89',
+        hanzi: '上',
+        pinyin: 'shàng',
+        meaning: 'Up / above / go to / attend',
+        notes: 'Indicator character showing something above a baseline. Seen in 上班, 上火, 上网课.',
+        status: 'new'
+      },
+      {
+        id: 'w3-90',
+        hanzi: '下',
+        pinyin: 'xià',
+        meaning: 'Down / below / finish',
+        notes: 'Indicator character showing something below a baseline. Seen in 下班, 上下班.',
+        status: 'new'
+      },
+      {
+        id: 'w3-91',
+        hanzi: '力',
+        pinyin: 'lì',
+        meaning: 'Strength / power / force',
+        notes: 'Pictograph of a plow/arm muscle. Appears in 男, 动 (move), 加 (add), 办 (handle).',
+        status: 'new'
+      },
+      {
+        id: 'w3-92',
+        hanzi: '中',
+        pinyin: 'zhōng',
+        meaning: 'Middle / center / China',
+        notes: 'Pictograph of a target/flagpole in the center.',
+        status: 'new'
+      },
+      {
+        id: 'w3-93',
+        hanzi: '先',
+        pinyin: 'xiān',
+        meaning: 'First / ahead / earlier',
+        notes: 'Foot/step above 人 (person stepping ahead first). Seen in 先生.',
+        status: 'new'
+      },
+      {
+        id: 'w3-94',
+        hanzi: '光',
+        pinyin: 'guāng',
+        meaning: 'Light / bright / bare',
+        notes: 'Originally 火 (fire) above 人 (person holding light).',
+        status: 'new'
+      },
+      {
+        id: 'w3-95',
+        hanzi: '肉',
+        pinyin: 'ròu',
+        meaning: 'Meat / flesh',
+        notes: 'Pictograph of a cut of meat. Also becomes 月 (肉月旁) inside body/meat characters.',
+        status: 'new'
+      },
+      {
+        id: 'w3-96',
+        hanzi: '出',
+        pinyin: 'chū',
+        meaning: 'Go out / exit / come out',
+        notes: 'Pictograph of a foot stepping out of a dwelling/pit. Seen in 出去玩.',
+        status: 'new'
+      },
+      {
+        id: 'w3-97',
+        hanzi: '刀',
+        pinyin: 'dāo',
+        meaning: 'Knife / blade (becomes 刂 on right)',
+        notes: 'Pictograph of a knife. Becomes 刂 (立刀旁) on the right of cut/divide characters like 利, 班, 到, 刻.',
+        status: 'new'
+      },
+      {
+        id: 'w3-98',
+        hanzi: '南',
+        pinyin: 'nán',
+        meaning: 'South',
+        notes: 'Pictograph of a hanging bell/percussion instrument from southern traditions. Seen in 济南, 南瓜.',
+        status: 'new'
+      }
+    ]
+  },
+  {
+    id: 'deck-level9-week4',
+    name: '🧱 Level 9 Week 4 (Illustrated Radicals & 宇 Family)',
+    category: 'lesson',
+    description: 'Visual radical etymology from Lesson 4: 宝盖头 (宀) & the 宇 word family, 单人旁 (亻), and 女字旁 (女).',
+    icon: '🧱',
+    cards: [
+      {
+        id: 'w4-1',
+        hanzi: '宀',
+        speak: '宝盖头',
+        pinyin: 'bǎo gài tóu',
+        meaning: 'Roof / House radical (宝盖头)',
+        notes: 'Ancient picture of a pitched roof over walls. Signals buildings, home, shelter, or space (宇, 家, 安, 室, 它, 宜).',
+        status: 'new'
+      },
+      {
+        id: 'w4-2',
+        hanzi: '宇',
+        pinyin: 'yǔ',
+        meaning: 'Roof eaves / space / bearing',
+        notes: 'Phono-semantic: 宀 (roof/house) + 于 (sound yú + overhanging eaves). Evolved from eaves → all directions of space → personal bearing.',
+        status: 'new'
+      },
+      {
+        id: 'w4-3',
+        hanzi: '宇宙',
+        pinyin: 'yǔ zhòu',
+        meaning: 'Universe / cosmos',
+        notes: '宇 (all directions of space, 宀) + 宙 (all past & future time, 宀) = space-time / universe!',
+        status: 'new'
+      },
+      {
+        id: 'w4-4',
+        hanzi: '屋宇',
+        pinyin: 'wū yǔ',
+        meaning: 'House / building / dwelling (literary)',
+        notes: '屋 (house/room) + 宇 (eaves/building, 宀). Preserves the original architectural meaning of 宇.',
+        status: 'new'
+      },
+      {
+        id: 'w4-5',
+        hanzi: '庙宇',
+        pinyin: 'miào yǔ',
+        meaning: 'Temple / shrine building',
+        notes: '庙 (temple, 广 shelter radical) + 宇 (eaves/hall, 宀).',
+        status: 'new'
+      },
+      {
+        id: 'w4-6',
+        hanzi: '气宇轩昂',
+        pinyin: 'qì yǔ xuān áng',
+        meaning: 'Dignified, commanding, and impressive bearing',
+        notes: 'Idiom using the extended sense of 宇 ("bearing/demeanor").',
+        status: 'new'
+      },
+      {
+        id: 'w4-7',
+        hanzi: '亻',
+        speak: '单人旁',
+        pinyin: 'dān rén páng',
+        meaning: 'Single-person radical (单人旁)',
+        notes: 'Evolved from oracle-bone 人 → standing 人 → compressed left radical 亻. Signals people, roles, or human actions (他, 们, 假, 似, 体).',
+        status: 'new'
+      },
+      {
+        id: 'w4-8',
+        hanzi: '女',
+        pinyin: 'nǚ',
+        meaning: 'Woman / Woman radical (女字旁)',
+        notes: 'Oracle-bone & bronze script show a kneeling woman with arms crossed. Radical for female relatives, names, and relationships (她, 妈, 姨, 好, 妇, 姑娘, 媒).',
+        status: 'new'
+      }
+    ]
+  },
+  {
+    id: 'deck-level9-week5',
+    name: '✋ Level 9 Week 5 (手/扌 Hand Radical & Everyday Verbs)',
+    category: 'lesson',
+    description: 'Deep dive into 手 → 提手旁 (扌), "把"字句 action verbs, 品 product words, leave types, and relationship terms.',
+    icon: '✋',
+    cards: [
+      {
+        id: 'w5-1',
+        hanzi: '手',
+        pinyin: 'shǒu',
+        meaning: 'Hand (root of 提手旁 扌)',
+        notes: 'Evolution: ancient 5-finger hand pictograph → 手 → compressed left-side radical 扌 (提手旁).',
+        status: 'new'
+      },
+      {
+        id: 'w5-2',
+        hanzi: '扌',
+        speak: '提手旁',
+        pinyin: 'tí shǒu páng',
+        meaning: 'Hand radical (提手旁)',
+        notes: 'Derived from 手 (hand). Signals hand or physical actions: 提, 打, 把, 拿, 找, 换, 推, 拉, 拍, 搞, 拾.',
+        status: 'new'
+      },
+      {
+        id: 'w5-3',
+        hanzi: '提',
+        pinyin: 'tí',
+        meaning: 'Lift / raise / carry / mention',
+        notes: '扌 (hand radical) + 是 (shì). Also the first character of 提手旁!',
+        status: 'new'
+      },
+      {
+        id: 'w5-4',
+        hanzi: '打扰',
+        pinyin: 'dǎ rǎo',
+        meaning: 'Disturb / bother / interrupt',
+        notes: 'Both characters use 扌 (hand radical)! Polite phrase: "不好意思，打扰了" (Sorry to bother you).',
+        status: 'new'
+      },
+      {
+        id: 'w5-5',
+        hanzi: '打扫',
+        pinyin: 'dǎ sǎo',
+        meaning: 'Sweep / clean up',
+        notes: 'Both characters use 扌 (hand radical)! Other 打 verbs: 打人, 打牌, 打电话, 打游戏, 打球, 打枪.',
+        status: 'new'
+      },
+      {
+        id: 'w5-6',
+        hanzi: '打工',
+        pinyin: 'dǎ gōng',
+        meaning: 'Work a job / do paid labor',
+        notes: '打工人 (working stiff / office worker slang).',
+        status: 'new'
+      },
+      {
+        id: 'w5-7',
+        hanzi: '打卡',
+        pinyin: 'dǎ kǎ',
+        meaning: 'Clock in / check in at a popular spot',
+        notes: '打卡上班 (clock in for work); "我来这个咖啡店打卡了"; "我来长城打卡".',
+        status: 'new'
+      },
+      {
+        id: 'w5-8',
+        hanzi: '打印',
+        pinyin: 'dǎ yìn',
+        meaning: 'Print (a document/photo)',
+        notes: '印 (stamp/print/seal) also appears in 印象 (impression), 印度 (India), 无印良品 (MUJI).',
+        status: 'new'
+      },
+      {
+        id: 'w5-9',
+        hanzi: '打架',
+        pinyin: 'dǎ jià',
+        meaning: 'Fight / brawl (physically)',
+        notes: '打 (扌) + 架 (frame/quarrel).',
+        status: 'new'
+      },
+      {
+        id: 'w5-10',
+        hanzi: '把',
+        pinyin: 'bǎ',
+        meaning: 'Grasp / handle / "把" disposal marker',
+        notes: '扌 (hand) + 巴 (bā). Pattern ("把"字句): Subject + 把 + Object + Verb + result (e.g. 我把门关上了).',
+        status: 'new'
+      },
+      {
+        id: 'w5-11',
+        hanzi: '放',
+        pinyin: 'fàng',
+        meaning: 'Put / place / let go / release',
+        notes: 'Example: 把手机放在桌子上. Also 开放日 (open day) and 放假 (go on holiday).',
+        status: 'new'
+      },
+      {
+        id: 'w5-12',
+        hanzi: '放假',
+        pinyin: 'fàng jià',
+        meaning: 'Have a holiday / go on break',
+        notes: 'Lesson sentence: "我要放假了。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-13',
+        hanzi: '收拾',
+        pinyin: 'shōu shi',
+        meaning: 'Tidy up / pack up / put away',
+        notes: '拾 uses 扌 (hand radical) + 合! Examples: 我把房间收拾了; 你去把衣服收起来.',
+        status: 'new'
+      },
+      {
+        id: 'w5-14',
+        hanzi: '喂',
+        pinyin: 'wèi',
+        meaning: 'Feed (a pet/child) / hello (on phone)',
+        notes: '口字旁 (mouth radical) + 畏. Example: 你去把猫喂了 vs 你去喂猫.',
+        status: 'new'
+      },
+      {
+        id: 'w5-15',
+        hanzi: '完成',
+        pinyin: 'wán chéng',
+        meaning: 'Complete / finish',
+        notes: '完 uses 宀 (roof radical). Example: 你把工作都完成了？',
+        status: 'new'
+      },
+      {
+        id: 'w5-16',
+        hanzi: '搞懂',
+        pinyin: 'gǎo dǒng',
+        meaning: 'Figure out / understand thoroughly',
+        notes: '搞 uses 扌 (hand radical)! Example: "你把‘把字句’搞懂了吗？"',
+        status: 'new'
+      },
+      {
+        id: 'w5-17',
+        hanzi: '记住',
+        pinyin: 'jì zhu',
+        meaning: 'Remember / keep in mind / memorize',
+        notes: '住 uses 亻 (person radical). Example: "我把这个记住了。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-18',
+        hanzi: '闭嘴',
+        pinyin: 'bì zuǐ',
+        meaning: 'Shut up / keep one\'s mouth shut',
+        notes: '闭 = 门 (door) + 才 (close/shut); 嘴 uses 口 (mouth radical). Compare: "请把嘴巴闭上".',
+        status: 'new'
+      },
+      {
+        id: 'w5-19',
+        hanzi: '拿',
+        pinyin: 'ná',
+        meaning: 'Take / hold / pick up (with hand)',
+        notes: 'Component formula: 合 (united/together) + 手 (hand) = 拿! Examples: 拿外卖, 拿快递.',
+        status: 'new'
+      },
+      {
+        id: 'w5-20',
+        hanzi: '和',
+        pinyin: 'hé',
+        meaning: 'And / with',
+        notes: '禾 (grain) + 口 (mouth). Example: 你和他.',
+        status: 'new'
+      },
+      {
+        id: 'w5-21',
+        hanzi: '外卖',
+        pinyin: 'wài mài',
+        meaning: 'Food delivery / takeout',
+        notes: '外 (outside) + 卖 (sell). Common phrase: 拿外卖 (pick up delivery food).',
+        status: 'new'
+      },
+      {
+        id: 'w5-22',
+        hanzi: '快递',
+        pinyin: 'kuài dì',
+        meaning: 'Express delivery / courier parcel 📦',
+        notes: '快 (忄 heart radical: fast) + 递 (辶 walk radical: pass/deliver). "你把快递拿了吗？"',
+        status: 'new'
+      },
+      {
+        id: 'w5-23',
+        hanzi: '找',
+        pinyin: 'zhǎo',
+        meaning: 'Look for / seek / find',
+        notes: '扌 (hand radical) + 戈. Examples: 找人, 找工作, 找女朋友; 找到 / 找不到 / 没找到.',
+        status: 'new'
+      },
+      {
+        id: 'w5-24',
+        hanzi: '换',
+        pinyin: 'huàn',
+        meaning: 'Change / swap / replace',
+        notes: '扌 (hand radical) + 奂. Examples: 换工作, 换衣服, 换手机, 换钱.',
+        status: 'new'
+      },
+      {
+        id: 'w5-25',
+        hanzi: '交换',
+        pinyin: 'jiāo huàn',
+        meaning: 'Exchange / swap (studies, gifts)',
+        notes: 'Lesson sentence: "我上大学的时候，交换去了瑞典。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-26',
+        hanzi: '推',
+        pinyin: 'tuī',
+        meaning: 'Push',
+        notes: '扌 (hand radical) + 隹. Pair with 拉 (pull).',
+        status: 'new'
+      },
+      {
+        id: 'w5-27',
+        hanzi: '拉',
+        pinyin: 'lā',
+        meaning: 'Pull / drag / stretch',
+        notes: '扌 (hand radical) + 立. Pair with 推 (push).',
+        status: 'new'
+      },
+      {
+        id: 'w5-28',
+        hanzi: '拍照',
+        pinyin: 'pāi zhào',
+        meaning: 'Take a photo / take pictures',
+        notes: '拍 uses 扌 (hand radical) + 白.',
+        status: 'new'
+      },
+      {
+        id: 'w5-29',
+        hanzi: '爪',
+        pinyin: 'zhuǎ',
+        meaning: 'Claw / paw / talon',
+        notes: 'Component inside 爬 (爬山)! Examples: 猫爪 (cat paw), 鸡爪 (chicken feet).',
+        status: 'new'
+      },
+      {
+        id: 'w5-30',
+        hanzi: '印度',
+        pinyin: 'Yìn dù',
+        meaning: 'India',
+        notes: 'Uses 印 (same character as 打印 print / 印象 impression).',
+        status: 'new'
+      },
+      {
+        id: 'w5-31',
+        hanzi: '无印良品',
+        pinyin: 'Wú yìn liáng pǐn',
+        meaning: 'MUJI (brand name)',
+        notes: 'Literally "no-stamp/brand quality goods" — 无 (no) + 印 (mark/brand) + 良品 (good products).',
+        status: 'new'
+      },
+      {
+        id: 'w5-32',
+        hanzi: '良品',
+        pinyin: 'liáng pǐn',
+        meaning: 'Quality goods / fine products',
+        notes: '良 (good/fine) + 品 (item/goods) = 好东西.',
+        status: 'new'
+      },
+      {
+        id: 'w5-33',
+        hanzi: '食品',
+        pinyin: 'shí pǐn',
+        meaning: 'Food products / foodstuffs',
+        notes: '食 (food) + 品 (three 口 mouths = goods/stuff).',
+        status: 'new'
+      },
+      {
+        id: 'w5-34',
+        hanzi: '饮品',
+        pinyin: 'yǐn pǐn',
+        meaning: 'Beverages / drinks',
+        notes: '饮 (饣 food/drink radical) + 品 (goods).',
+        status: 'new'
+      },
+      {
+        id: 'w5-35',
+        hanzi: '药品',
+        pinyin: 'yào pǐn',
+        meaning: 'Medicine / pharmaceuticals',
+        notes: '药 (艹 plant/herb radical!) + 品 (goods).',
+        status: 'new'
+      },
+      {
+        id: 'w5-36',
+        hanzi: '无限时',
+        pinyin: 'wú xiàn shí',
+        meaning: 'Unlimited time / no time limit',
+        notes: 'Parking sign phrase: 无限时，随便停 / 免费停.',
+        status: 'new'
+      },
+      {
+        id: 'w5-37',
+        hanzi: '免费',
+        pinyin: 'miǎn fèi',
+        meaning: 'Free of charge',
+        notes: '免 (exempt/avoid) + 费 (fee, 贝 money radical). E.g. 免费停 (free parking).',
+        status: 'new'
+      },
+      {
+        id: 'w5-38',
+        hanzi: '其实',
+        pinyin: 'qí shí',
+        meaning: 'Actually / in fact',
+        notes: 'Its (其) + truth/reality (实). Used to clarify or contrast expectations.',
+        status: 'new'
+      },
+      {
+        id: 'w5-39',
+        hanzi: '市政厅',
+        pinyin: 'shì zhèng tīng',
+        meaning: 'Town hall / city hall',
+        notes: '市 (city) + 政 (government) + 厅 (hall, 厂 + 丁).',
+        status: 'new'
+      },
+      {
+        id: 'w5-40',
+        hanzi: '除非',
+        pinyin: 'chú fēi',
+        meaning: 'Unless',
+        notes: 'Examples: "我不上班，除非我没钱了。" / "我喜欢喝酒，除非我要开车，我不喝。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-41',
+        hanzi: '除了',
+        pinyin: 'chú le',
+        meaning: 'Except / besides / apart from',
+        notes: 'Examples: "我和她都要上班，除了他不用上班。" / "除了盲盒，我都行。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-42',
+        hanzi: '盲盒',
+        pinyin: 'máng hé',
+        meaning: 'Blind box (mystery collectible box)',
+        notes: '盲 (亡 + 目 eye = blind) + 盒 (box).',
+        status: 'new'
+      },
+      {
+        id: 'w5-43',
+        hanzi: '请假',
+        pinyin: 'qǐng jià',
+        meaning: 'Ask for leave / take time off',
+        notes: 'Note 4th tone jià! Types: 请事假, 请病假, 请年假, 陪产假.',
+        status: 'new'
+      },
+      {
+        id: 'w5-44',
+        hanzi: '事假',
+        pinyin: 'shì jià',
+        meaning: 'Personal leave',
+        notes: '事 (personal matter) + 假 (leave).',
+        status: 'new'
+      },
+      {
+        id: 'w5-45',
+        hanzi: '病假',
+        pinyin: 'bìng jià',
+        meaning: 'Sick leave',
+        notes: '病 (疒 sickness radical) + 假 (leave).',
+        status: 'new'
+      },
+      {
+        id: 'w5-46',
+        hanzi: '年假',
+        pinyin: 'nián jià',
+        meaning: 'Annual leave / paid vacation',
+        notes: '年 (year) + 假 (leave).',
+        status: 'new'
+      },
+      {
+        id: 'w5-47',
+        hanzi: '陪产假',
+        pinyin: 'péi chǎn jià',
+        meaning: 'Paternity leave',
+        notes: '陪 (accompany) + 产 (childbirth) + 假 (leave).',
+        status: 'new'
+      },
+      {
+        id: 'w5-48',
+        hanzi: '结婚率',
+        pinyin: 'jié hūn lǜ',
+        meaning: 'Marriage rate',
+        notes: '结 (纟 silk radical: tie/unite) + 婚 (女 woman radical: marry) + 率 (rate). Lesson note: 结婚率 / 生育率 都很低.',
+        status: 'new'
+      },
+      {
+        id: 'w5-49',
+        hanzi: '生育率',
+        pinyin: 'shēng yù lǜ',
+        meaning: 'Birth rate / fertility rate',
+        notes: '生育 (childbearing) + 率 (rate). Paired with 结婚率都很低.',
+        status: 'new'
+      },
+      {
+        id: 'w5-50',
+        hanzi: '离婚率',
+        pinyin: 'lí hūn lǜ',
+        meaning: 'Divorce rate',
+        notes: '离婚 (divorce; 婚 uses 女 woman radical) + 率 (rate).',
+        status: 'new'
+      },
+      {
+        id: 'w5-51',
+        hanzi: '晚婚晚育',
+        pinyin: 'wǎn hūn wǎn yù',
+        meaning: 'Late marriage and late childbearing',
+        notes: '晚 (late) + 婚 (marry, 女) + 育 (raise/bear children).',
+        status: 'new'
+      },
+      {
+        id: 'w5-52',
+        hanzi: '相亲',
+        pinyin: 'xiāng qīn',
+        meaning: 'Blind date / arranged matchmaking meeting',
+        notes: '相 (mutual, 目 eye) + 亲 (family/marriage). Contrast with 自由恋爱.',
+        status: 'new'
+      },
+      {
+        id: 'w5-53',
+        hanzi: '自由恋爱',
+        pinyin: 'zì yóu liàn ài',
+        meaning: 'Free-choice love / dating freely',
+        notes: 'Lesson sentence: "我们在大学的时候，朋友介绍认识的，我们是自由恋爱的。"',
+        status: 'new'
+      },
+      {
+        id: 'w5-54',
+        hanzi: '生产',
+        pinyin: 'shēng chǎn',
+        meaning: 'Produce / manufacture / give birth',
+        notes: '生 (give birth/grow) + 产 (produce). Also 生小孩 (have a baby).',
+        status: 'new'
+      },
+      {
+        id: 'w5-55',
+        hanzi: '生育',
+        pinyin: 'shēng yù',
+        meaning: 'Childbearing / fertility / give birth & raise',
+        notes: '生 (birth) + 育 (nurture/maternity).',
+        status: 'new'
+      },
+      {
+        id: 'w5-56',
+        hanzi: '生日',
+        pinyin: 'shēng rì',
+        meaning: 'Birthday',
+        notes: '生 (birth) + 日 (day).',
+        status: 'new'
+      }
+    ]
   }
 ];

@@ -52,6 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
   refreshAllViews();
 });
 
+function speakWithFallbackFeedback(text, options = {}) {
+  const voices = speech.loadVoices();
+  const hasAnyBrowserVoices = typeof window !== 'undefined' && 'speechSynthesis' in window && (window.speechSynthesis.getVoices() || []).length > 0;
+  speech.speak(text, {
+    ...options,
+    onError: err => {
+      if (options.onError) options.onError(err);
+      if (voices.length === 0) {
+        showToast(
+          hasAnyBrowserVoices
+            ? '🔇 No Mandarin (zh-CN) TTS voice found on this browser/OS'
+            : '🔇 No browser TTS voices available on this device'
+        );
+      }
+    }
+  });
+}
+
 // ==================== TOAST HELPER ====================
 function showToast(message) {
   const container = document.getElementById('toastContainer');
@@ -230,7 +248,7 @@ function initStudyControls() {
     const card = session.getCurrentCard();
     if (!card) return;
     frontAudioHintBtn.classList.add('speaking');
-    speech.speak(card.hanzi, {
+    speakWithFallbackFeedback(card.speak || card.hanzi, {
       onEnd: () => frontAudioHintBtn.classList.remove('speaking'),
       onError: () => frontAudioHintBtn.classList.remove('speaking')
     });
@@ -260,13 +278,13 @@ function initStudyControls() {
   document.getElementById('backSpeakBtn')?.addEventListener('click', e => {
     e.stopPropagation();
     const card = session.getCurrentCard();
-    if (card) speech.speak(card.hanzi);
+    if (card) speakWithFallbackFeedback(card.speak || card.hanzi);
   });
 
   document.getElementById('backSlowSpeakBtn')?.addEventListener('click', e => {
     e.stopPropagation();
     const card = session.getCurrentCard();
-    if (card) speech.speak(card.hanzi, { rate: 0.62 });
+    if (card) speakWithFallbackFeedback(card.speak || card.hanzi, { rate: 0.62 });
   });
 
   document.getElementById('editCurrentCardBtn')?.addEventListener('click', e => {
@@ -321,7 +339,7 @@ function handleCardFlip() {
 
   // Play Mandarin audio when flipping to the back (if enabled)
   if (nowFlipped && settings.autoPlayAudio !== false) {
-    speech.speak(card.hanzi);
+    speech.speak(card.speak || card.hanzi);
   }
 }
 
@@ -571,7 +589,7 @@ function initKeyboardShortcuts() {
       handleRateCard('good');
     } else if (e.key === 'a' || e.key === 'A') {
       const card = session.getCurrentCard();
-      if (card) speech.speak(card.hanzi);
+      if (card) speakWithFallbackFeedback(card.speak || card.hanzi);
     } else if (e.key === 'ArrowLeft') {
       session.prevCard();
       renderStudyView();
@@ -902,7 +920,7 @@ function initDecksAndSettingsView() {
   });
 
   document.getElementById('testVoiceBtn')?.addEventListener('click', () => {
-    speech.speak('老板，来一份红烧牛肉面，再来一杯去冰珍珠奶茶！');
+    speakWithFallbackFeedback('老板，来一份红烧牛肉面，再来一杯去冰珍珠奶茶！');
   });
 
   // Quick group launchers in Decks tab
@@ -984,7 +1002,7 @@ function initDecksAndSettingsView() {
     storage.restoreStarterDecks();
     loadActiveDeckIntoStudy(false);
     refreshAllViews();
-    showToast('🔄 Restored all 5 China Menu starter decks');
+    showToast('🔄 Restored all starter menu & lesson decks');
   });
 }
 

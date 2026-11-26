@@ -2,7 +2,7 @@
  * Service Worker for 100% Offline Mobile Study
  */
 
-const CACHE_NAME = 'hanzi-menu-pwa-v1';
+const CACHE_NAME = 'hanzi-menu-pwa-v8';
 const ASSETS = [
   './',
   './index.html',

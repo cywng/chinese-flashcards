@@ -15,9 +15,9 @@ Vibe coded webapp
 
 ### 2. Deck Toggling (Individual, Lessons Only, Groups)
 Tap the **top header pill** or **`[ 🗂️ Deck ▾ ]`** on the toolbar to open the switcher:
-* **📖 Lessons Only**: Combines all lesson notes (*Level 9 Lesson 1*, etc.) into one session.
+* **📖 Lessons Only**: Combines all lesson notes (*Level 9 Lesson 1*, *Week 2*, *Week 3*, *Week 4*, *Week 5*) into one session.
 * **🍜 Menus & Dining**: Combines all 5 restaurant/food decks (110 words).
-* **🌟 All Decks Combined**: Studies all 147 words across your library.
+* **🌟 All Decks Combined**: Studies all 380 words across your library.
 * **Individual Deck**: Tap any single deck to study it alone.
 * **🎛️ Multi-Select**: Tap to check/uncheck any custom combination of decks.
 
@@ -39,14 +39,18 @@ Tap the **top header pill** or **`[ 🗂️ Deck ▾ ]`** on the toolbar to open
 
 ---
 
-## 📚 Included Decks (147 Cards)
+## 📚 Included Decks (380 Cards)
 
 1. **📖 Level 9 Lesson 1** (37 cards): Visiting relatives, nuanced verbs, idioms (`词不达意`, `泾渭分明`, `热火朝天`), small talk (`寒暄`, `闲聊`).
-2. **🔥 烹饪与口味** (24 cards): `红烧`, `清蒸`, `爆炒`, `干煸`, `水煮`, `蒜蓉`, `麻辣`, `酸辣`, `鱼香`...
-3. **🥩 肉类与海鲜** (22 cards): `五花肉`, `里脊肉`, `排骨`, `牛腩`, `肥牛`, `毛肚`, `鸭血`, `虾仁`, `生蚝`...
-4. **🍜 面食与米饭** (22 cards): `牛肉面`, `炸酱面`, `担担面`, `刀削面`, `干炒牛河`, `酸辣粉`, `小笼包`, `生煎`...
-5. **🧋 奶茶与饮品** (22 cards): `珍珠奶茶`, `芋泥波波`, `杨枝甘露`, `鸭屎香`, `脆波波`, `去冰`, `五分糖`...
-6. **🥘 经典名菜** (20 cards): `宫保鸡丁`, `鱼香肉丝`, `麻婆豆腐`, `回锅肉`, `水煮牛肉`, `酸菜鱼`, `辣子鸡`...
+2. **📅 Level 9 Week 2** (71 cards): Travel planning, seasons & holidays (`淡季`, `旺季`), basic character roots (`禾`, `子`, `石`, `山`, `左`, `右`), and intro radicals (`口`, `门`, `王`).
+3. **🌿 Level 9 Week 3** (98 cards): Work/WFH & mahjong, Australian life & diet (`忌口`, `花粉过敏`), radical families (`艹`, `木`, `氵`, `⺮`, `玉`, `金`), and 26 pictograph roots.
+4. **🧱 Level 9 Week 4** (8 cards): Illustrated radical deep-dives from Lesson 4: `宀` (`宝盖头`) & the `宇` word family (`宇宙`, `屋宇`, `庙宇`, `气宇轩昂`), `亻` (`单人旁`), and `女` (`女字旁`).
+5. **✋ Level 9 Week 5** (56 cards): `手` → `提手旁 (扌)` verbs (`打扰`, `打扫`, `把`, `拿`, `找`, `换`, `推`, `拉`, `拍照`), `品` goods (`食品`, `饮品`, `药品`), leave types, and relationship vocab.
+6. **🔥 烹饪与口味** (24 cards): `红烧`, `清蒸`, `爆炒`, `干煸`, `水煮`, `蒜蓉`, `麻辣`, `酸辣`, `鱼香`...
+7. **🥩 肉类与海鲜** (22 cards): `五花肉`, `里脊肉`, `排骨`, `牛腩`, `肥牛`, `毛肚`, `鸭血`, `虾仁`, `生蚝`...
+8. **🍜 面食与米饭** (22 cards): `牛肉面`, `炸酱面`, `担担面`, `刀削面`, `干炒牛河`, `酸辣粉`, `小笼包`, `生煎`...
+9. **🧋 奶茶与饮品** (22 cards): `珍珠奶茶`, `芋泥波波`, `杨枝甘露`, `鸭屎香`, `脆波波`, `去冰`, `五分糖`...
+10. **🥘 经典名菜** (20 cards): `宫保鸡丁`, `鱼香肉丝`, `麻婆豆腐`, `回锅肉`, `水煮牛肉`, `酸菜鱼`, `辣子鸡`...
 
 ---
 

@@ -154,7 +154,7 @@ export function generatePinyin(text) {
  */
 export function getCharacterBreakdown(hanzi) {
   if (!hanzi) return [];
-  const chars = Array.from(hanzi).filter(ch => /[\u4e00-\u9fff]/.test(ch));
+  const chars = Array.from(hanzi).filter(ch => /[\u2e80-\u2eff\u4e00-\u9fff]/.test(ch));
   const phrasePinyinParts = generatePinyin(hanzi).split(/\s+/);
 
   return chars.map((ch, idx) => {
